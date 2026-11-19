@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="theme-color" content="#080808" />
+  <meta name="application-name" content="Mughal Gems Jewellery" />
+  <meta name="apple-mobile-web-app-title" content="Mughal Gems" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Mughal Gems Jewellery global gemstone and fine jewellery live auction marketplace." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>MUGHAL GEMS JEWELLERY | Global Live Gemstone & Fine Jewellery Auctions</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#080808',
+            velvet: '#121212',
+            charcoal: '#1A1A1A',
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F3E5AB',
+              dark: '#997A15',
+              muted: 'rgba(212, 175, 55, 0.14)'
+            },
+            ivory: {
+              DEFAULT: '#FAF8F5',
+              muted: '#D6D1C7',
+              dim: '#9A9387'
+            }
+          },
+          fontFamily: {
+            royal: ['Cinzel', 'serif'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    body {
+      background-color: #080808;
+      color: #FAF8F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding-top: var(--safe-top);
+      padding-bottom: calc(84px + var(--safe-bottom));
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+    }
+    @media (min-width: 768px) {
+      body { padding-bottom: 24px; }
+    }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #080808; }
+    ::-webkit-scrollbar-thumb { background: #2D2616; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA841C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border-glow {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(243, 229, 171, 0.12);
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #E8C766 0%, #D4AF37 55%, #A37E18 100%);
+      color: #080808;
+      font-weight: 700;
+      min-height: 44px;
+      transition: all 0.22s ease;
+    }
+    .gold-btn:hover:not(:disabled) {
+      filter: brightness(1.07);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.32);
+    }
+    .gold-btn:active:not(:disabled) { transform: scale(0.98); }
+    .gold-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .touch-target { min-height: 44px; min-width: 44px; }
+    @keyframes slowTurntable {
+      0% { transform: scale(1.04) rotate(-1.5deg); }
+      50% { transform: scale(1.12) rotate(1.5deg); }
+      100% { transform: scale(1.04) rotate(-1.5deg); }
+    }
+    .turntable-active { animation: slowTurntable 9s ease-in-out infinite; }
+    .ios-bottom-nav { padding-bottom: calc(6px + var(--safe-bottom)); }
+    @media (max-width: 767px) {
+      input, select, textarea { font-size: 16px !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-gold selection:text-obsidian">
+
+  <!-- TOP STICKY LUXURY HEADER -->
+  <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-xl border-b border-gold/25">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <button onclick="navigateTo('home')" class="flex items-center gap-2.5 text-left touch-target group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-light via-gold to-gold-dark p-[1.5px] shadow-lg shrink-0">
+          <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center relative">
+            <i class="fa-solid fa-gem text-gold text-base group-hover:scale-110 transition-transform"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-red-500 border-2 border-obsidian"></span>
+          </div>
+        </div>
+        <div>
+          <div class="font-royal text-sm sm:text-lg font-extrabold tracking-wider gold-gradient-text leading-none">MUGHAL GEMS</div>
+          <div class="text-[9px] sm:text-[10px] tracking-[0.26em] text-ivory-dim uppercase mt-1">Jewellery • Live Auctions</div>
+        </div>
+      </button>
+
+      <nav class="hidden lg:flex items-center gap-1 bg-velvet border border-gold/20 rounded-full p-1">
+        <button onclick="navigateTo('home')" data-page="home" class="top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gold text-obsidian transition">Home</button>
+        <button onclick="navigateTo('live')" data-page="live" class="top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold text-ivory-muted hover:text-ivory transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>Live Auctions
+        </button>
+        <button onclick="navigateTo('categories')" data-page="categories" class="top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold text-ivory-muted hover:text-ivory transition">Categories</button>
+        <button onclick="navigateTo('seller-register')" data-page="seller-register" class="top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold text-ivory-muted hover:text-ivory transition">Sell Globally</button>
+        <button onclick="navigateTo('seller-dashboard')" data-page="seller-dashboard" class="top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold text-ivory-muted hover:text-ivory transition">Seller Studio</button>
+        <button onclick="navigateTo('profile')" data-page="profile" class="top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold text-ivory-muted hover:text-ivory transition">Profile</button>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <select id="currencySelector" onchange="changeCurrency(this.value)" aria-label="Currency" class="touch-target bg-velvet border border-gold/30 rounded-xl px-2.5 py-1.5 text-xs font-bold text-gold-light focus:outline-none focus:border-gold">
+          <option value="USD">USD $</option>
+          <option value="INR">INR ₹</option>
+          <option value="EUR">EUR €</option>
+          <option value="GBP">GBP £</option>
+        </select>
+
+        <!-- Dedicated verified-claim Admin button hidden unless custom claim admin === true -->
+        <button id="headerAdminBtn" onclick="verifyAndOpenAdminDashboard()" style="display: none;" class="touch-target items-center gap-1.5 bg-gold/15 hover:bg-gold hover:text-obsidian border border-gold/45 rounded-xl px-3 py-1.5 text-xs font-bold text-gold-light transition">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span class="hidden sm:inline">Admin</span>
+        </button>
+
+        <button onclick="openAuthModal()" class="touch-target flex items-center gap-2 bg-velvet hover:bg-charcoal border border-gold/30 rounded-xl px-2.5 sm:px-3 py-1.5 transition">
+          <div id="headerAvatar" class="w-7 h-7 rounded-lg bg-gold/20 border border-gold/50 text-gold flex items-center justify-center text-xs font-bold">
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div class="hidden sm:block text-left">
+            <div id="headerUserName" class="text-xs font-semibold text-ivory leading-tight max-w-[95px] truncate">Guest</div>
+            <div id="headerUserRole" class="text-[9px] uppercase tracking-wider text-gold leading-tight">Sign In</div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Winner Notification Banner -->
+  <div id="winnerToastBanner" class="hidden bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-obsidian px-4 py-3 shadow-2xl border-b border-ivory/30">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
+      <div class="flex items-center gap-2.5">
+        <i class="fa-solid fa-trophy text-lg shrink-0"></i>
+        <p id="winnerBannerMsg" class="text-xs sm:text-sm font-bold">Hammer Fall! You won an auction lot.</p>
+      </div>
+      <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+        <button onclick="navigateTo('profile'); document.getElementById('winnerToastBanner').classList.add('hidden');" class="bg-obsidian text-gold-light px-4 py-2 rounded-xl text-xs font-bold">
+          Simulated Demo Checkout (No Real Charge)
+        </button>
+        <button onclick="document.getElementById('winnerToastBanner').classList.add('hidden')" class="p-2 text-obsidian/80">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-3.5 sm:px-6 py-5">
+
+    <!-- PAGE 1: HOME -->
+    <section id="page-home" class="app-page space-y-7">
+      <div class="relative rounded-3xl overflow-hidden bg-velvet gold-border-glow p-5 sm:p-9">
+        <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 88% 15%, #D4AF37 0%, transparent 45%), radial-gradient(circle at 12% 85%, #997A15 0%, transparent 42%);"></div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold-light text-[11px] font-semibold">
+              <i class="fa-solid fa-crown text-gold"></i>
+              <span>JAIPUR HERITAGE TO GLOBAL COLLECTORS</span>
+            </div>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-ivory leading-[1.15]">
+              MUGHAL GEMS <span class="gold-gradient-text italic block sm:inline">JEWELLERY</span>
+            </h1>
+            <p class="text-ivory-muted text-sm sm:text-base leading-relaxed max-w-xl">
+              An international live auction house uniting certified natural gemstones, lab-grown brilliance, artisanal silver, and royal fine jewellery with verified worldwide merchants.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 pt-1">
+              <button onclick="navigateTo('live')" class="gold-btn px-6 py-3 rounded-2xl text-sm flex items-center justify-center gap-2.5">
+                <i class="fa-solid fa-gavel"></i>
+                <span>Enter Live Saleroom</span>
+              </button>
+              <button type="button" id="apply-seller-btn" class="touch-target px-6 py-3 rounded-2xl text-sm font-semibold border border-gold/45 text-gold-light hover:bg-gold/10 transition flex items-center justify-center gap-2 cursor-pointer relative z-30">
+                <i class="fa-solid fa-globe"></i>
+                <span>Apply as Worldwide Seller</span>
+              </button>
+            </div>
+          </div>
+          <div class="lg:col-span-5" id="homeSpotlightContainer"></div>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-ivory">Curated Departments</h2>
+          <button onclick="navigateTo('categories')" class="text-xs font-semibold text-gold-light hover:text-gold flex items-center gap-1">
+            <span>View Full Catalog</span> <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <button onclick="openCategoryCatalog('Natural Gemstones')" class="touch-target bg-velvet hover:bg-charcoal border border-gold/25 hover:border-gold rounded-2xl p-4 text-left transition group">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform"><i class="fa-solid fa-gem"></i></div>
+            <div class="text-xs sm:text-sm font-bold text-ivory">Natural Gemstones</div>
+            <div class="text-[11px] text-ivory-dim mt-0.5">Emeralds, Rubies, Sapphires</div>
+          </button>
+          <button onclick="openCategoryCatalog('Lab Grown Gemstones')" class="touch-target bg-velvet hover:bg-charcoal border border-gold/25 hover:border-gold rounded-2xl p-4 text-left transition group">
+            <div class="w-9 h-9 rounded-xl bg-sky-500/15 text-sky-400 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform"><i class="fa-solid fa-atom"></i></div>
+            <div class="text-xs sm:text-sm font-bold text-ivory">Lab Grown Gemstones</div>
+            <div class="text-[11px] text-ivory-dim mt-0.5">CVD Diamonds & Hydrothermal</div>
+          </button>
+          <button onclick="openCategoryCatalog('Silver Jewellery')" class="touch-target bg-velvet hover:bg-charcoal border border-gold/25 hover:border-gold rounded-2xl p-4 text-left transition group">
+            <div class="w-9 h-9 rounded-xl bg-slate-400/15 text-slate-300 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform"><i class="fa-solid fa-ring"></i></div>
+            <div class="text-xs sm:text-sm font-bold text-ivory">Silver Jewellery</div>
+            <div class="text-[11px] text-ivory-dim mt-0.5">925 Sterling & Royal Filigree</div>
+          </button>
+          <button onclick="openCategoryCatalog('Fine Jewellery')" class="touch-target bg-velvet hover:bg-charcoal border border-gold/25 hover:border-gold rounded-2xl p-4 text-left transition group">
+            <div class="w-9 h-9 rounded-xl bg-gold/15 text-gold flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform"><i class="fa-solid fa-crown"></i></div>
+            <div class="text-xs sm:text-sm font-bold text-ivory">Fine Jewellery</div>
+            <div class="text-[11px] text-ivory-dim mt-0.5">18K/22K Gold & Kundan Polki</div>
+          </button>
+          <button onclick="openCategoryCatalog('Other Products')" class="col-span-2 sm:col-span-1 touch-target bg-velvet hover:bg-charcoal border border-gold/25 hover:border-gold rounded-2xl p-4 text-left transition group">
+            <div class="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-300 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform"><i class="fa-solid fa-box-open"></i></div>
+            <div class="text-xs sm:text-sm font-bold text-ivory">Other Products</div>
+            <div class="text-[11px] text-ivory-dim mt-0.5">Rough Specimens & Carvings</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="font-serif text-xl sm:text-2xl font-bold text-ivory">On The Auction Block</h2>
+            <p class="text-xs text-ivory-dim">Tap any lot to inspect full gemological specifications or join live bidding.</p>
+          </div>
+          <span id="homeActiveCountPill" class="px-3 py-1 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-bold">0 Lots</span>
+        </div>
+        <div id="homeLotsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: LIVE AUCTIONS SALEROOM -->
+    <section id="page-live" class="app-page hidden space-y-4">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="saleroomLotSwitcher"></div>
+      <div id="saleroomDemoBanner" class="hidden bg-amber-500/15 border border-amber-400/50 rounded-2xl px-4 py-3 flex items-start gap-3">
+        <i class="fa-solid fa-flask text-amber-300 text-base mt-0.5 shrink-0"></i>
+        <div class="text-xs text-amber-200 leading-relaxed">
+          <strong class="uppercase tracking-wider">DEMO MODE:</strong> Sample lot for preview purposes. Demo bids and demo payments are simulated.
+        </div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5" id="saleroomStageContainer">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-velvet rounded-3xl overflow-hidden gold-border-glow">
+            <div class="bg-obsidian/90 px-3.5 sm:px-4 py-3 border-b border-gold/20 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <button id="stageBtnTurntable" onclick="setSaleroomMediaMode('turntable')" class="touch-target px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-obsidian transition">
+                  <i class="fa-solid fa-rotate mr-1"></i> 360° Showcase
+                </button>
+                <button id="stageBtnLoupe" onclick="setSaleroomMediaMode('loupe')" class="touch-target px-3 py-1.5 rounded-xl text-xs font-bold bg-charcoal text-ivory-muted hover:text-ivory border border-gold/20 transition">
+                  <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Macro Loupe
+                </button>
+                <button id="stageBtnVideo" onclick="setSaleroomMediaMode('video')" class="touch-target px-3 py-1.5 rounded-xl text-xs font-bold bg-charcoal text-ivory-muted hover:text-ivory border border-gold/20 transition">
+                  <i class="fa-solid fa-video text-red-400 mr-1"></i> Live Cam
+                </button>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-obsidian border border-gold/25 text-[11px] text-gold-light font-semibold">Verified Saleroom</span>
+            </div>
+
+            <div id="saleroomViewport" class="relative aspect-[4/3] sm:aspect-[16/11] bg-obsidian overflow-hidden flex items-center justify-center select-none touch-none">
+              <img id="saleroomLotImg" src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=1200&q=85" alt="Gemstone Lot" class="w-full h-full object-cover turntable-active transition-transform duration-150" />
+              <div id="macroLoupeLens" class="hidden pointer-events-none absolute w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-gold shadow-[0_0_30px_rgba(0,0,0,0.9),inset_0_0_16px_rgba(212,175,55,0.45)] overflow-hidden z-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%); background-repeat: no-repeat;">
+                <div class="absolute inset-0 flex items-center justify-center opacity-45"><div class="w-full h-[1px] bg-gold"></div></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-45"><div class="h-full w-[1px] bg-gold"></div></div>
+                <span class="absolute bottom-2 inset-x-0 text-center text-[9px] font-mono font-bold text-gold-light bg-obsidian/75 py-0.5">2.8x OPTICAL LOUPE</span>
+              </div>
+              <video id="saleroomLiveVideo" autoplay playsinline muted class="hidden w-full h-full object-cover"></video>
+              <div id="saleroomVideoStandby" class="hidden absolute inset-0 bg-obsidian/92 backdrop-blur-sm flex flex-col items-center justify-center p-5 text-center space-y-2.5 z-10">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-[10px] font-extrabold uppercase tracking-wider">LIVE CAM (DEMO PREVIEW UNAVAILABLE — SIMULATED STUDIO FEED)</span>
+                <div class="w-12 h-12 rounded-full bg-gold/15 border border-gold/35 text-gold flex items-center justify-center"><i class="fa-solid fa-video-slash"></i></div>
+                <p class="text-sm font-bold text-ivory">Live Merchant Video Stream Offline</p>
+                <button onclick="toggleSaleroomCamera()" class="touch-target mt-1 px-4 py-2 rounded-xl bg-charcoal hover:bg-gold/20 border border-gold/40 text-gold-light text-xs font-bold transition">Test Local Camera Preview</button>
+              </div>
+
+              <div class="absolute top-3 left-3 flex gap-2 z-10">
+                <span id="saleroomTypeBadge" class="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase bg-amber-500 text-obsidian shadow-lg">DEMO LOT</span>
+                <span id="saleroomCategoryBadge" class="px-3 py-1 rounded-full text-[11px] font-semibold bg-obsidian/85 border border-gold/30 text-gold-light">Natural Gemstones</span>
+              </div>
+              <div class="absolute top-3 right-3 bg-obsidian/90 backdrop-blur-md border border-gold/45 px-3.5 py-2 rounded-2xl text-right shadow-2xl z-10">
+                <div class="text-[9px] uppercase tracking-widest text-ivory-dim">Auction Ends In</div>
+                <div id="saleroomTimer" class="font-royal text-base sm:text-xl font-bold text-gold tabular-nums">--:--:--</div>
+              </div>
+
+              <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-obsidian via-obsidian/85 to-transparent p-4 flex items-end justify-between gap-3 z-10">
+                <div class="min-w-0">
+                  <div id="saleroomLotCode" class="text-[10px] font-mono text-gold-light uppercase truncate">LOT #DEMO-101</div>
+                  <h2 id="saleroomLotTitle" class="font-serif text-lg sm:text-2xl font-bold text-ivory leading-snug">Lot Title</h2>
+                </div>
+                <button onclick="openFullSpecsDrawer(activeSaleroomId)" class="touch-target shrink-0 px-3.5 py-2 rounded-xl bg-velvet/95 border border-gold/50 text-gold-light hover:bg-gold hover:text-obsidian text-xs font-bold transition">
+                  Full Specs <i class="fa-solid fa-sliders ml-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <div id="saleroomStageSubBar" class="bg-obsidian/90 border-t border-gold/15 px-4 py-2.5 flex items-center justify-between gap-3 text-xs">
+              <div id="turntableControlsWrap" class="flex items-center gap-3 w-full">
+                <button type="button" id="turntablePlayPauseBtn" onclick="toggleTurntableAuto()" class="px-2.5 py-1 rounded-lg bg-velvet border border-gold/30 text-gold-light text-[11px] font-bold shrink-0"><i class="fa-solid fa-pause mr-1"></i> Auto</button>
+                <span class="text-[11px] text-ivory-dim shrink-0">360° Angle:</span>
+                <input type="range" id="turntableAngleSlider" min="0" max="360" value="0" oninput="scrubTurntableAngle(this.value)" class="w-full accent-[#D4AF37] cursor-pointer" />
+                <span id="turntableAngleLabel" class="font-mono text-[11px] text-gold w-9 text-right shrink-0">0°</span>
+              </div>
+              <div id="loupeControlsWrap" class="hidden w-full flex items-center justify-between text-[11px] text-gold-light">
+                <span><i class="fa-solid fa-hand-pointer mr-1.5 text-gold"></i>Move over gemstone to inspect facets at 2.8x</span>
+                <button type="button" onclick="setSaleroomMediaMode('turntable')" class="text-ivory-dim hover:text-ivory underline shrink-0 ml-2">Exit</button>
+              </div>
+            </div>
+
+            <div id="saleroomQuickSpecs" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 bg-obsidian/70 border-t border-gold/20 p-3.5 text-left"></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-velvet rounded-3xl p-4 sm:p-5 gold-border-glow space-y-4">
+            <div class="grid grid-cols-3 gap-2 border-b border-gold/15 pb-3.5">
+              <div class="bg-obsidian/80 border border-gold/15 rounded-2xl p-2.5 text-center">
+                <span class="text-[9px] uppercase text-ivory-dim block">Starting Bid</span>
+                <div id="saleroomStartingBid" class="font-royal text-sm sm:text-base font-bold text-ivory mt-0.5">$0.00</div>
+              </div>
+              <div class="bg-obsidian border border-gold/45 rounded-2xl p-2.5 text-center shadow-inner">
+                <span class="text-[9px] uppercase text-gold-light font-bold block">Highest Bid</span>
+                <div id="saleroomCurrentBid" class="font-royal text-sm sm:text-lg font-extrabold gold-gradient-text mt-0.5">$0.00</div>
+              </div>
+              <div class="bg-obsidian/80 border border-gold/25 rounded-2xl p-2.5 text-center">
+                <span class="text-[9px] uppercase text-ivory-dim block">Min Next Bid</span>
+                <div id="saleroomMinNextBid" class="font-royal text-sm sm:text-base font-bold text-gold-light mt-0.5">$0.00</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs px-1">
+              <div class="truncate"><span class="text-ivory-dim">Leader: </span><span id="saleroomLeaderName" class="font-bold text-ivory">No bids yet</span></div>
+              <span id="saleroomBidCount" class="text-[11px] font-semibold text-gold-light shrink-0">0 bids</span>
+            </div>
+
+            <form id="saleroomBidForm" onsubmit="placeLiveBid(event)" class="space-y-3">
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" onclick="setQuickBidMultiplier(1)" class="touch-target py-2 px-2 rounded-xl bg-obsidian border border-gold/30 text-xs font-bold text-gold-light">+Min Inc</button>
+                <button type="button" onclick="setQuickBidMultiplier(2)" class="touch-target py-2 px-2 rounded-xl bg-obsidian border border-gold/30 text-xs font-bold text-gold-light">+2x Inc</button>
+                <button type="button" onclick="setQuickBidMultiplier(5)" class="touch-target py-2 px-2 rounded-xl bg-obsidian border border-gold/30 text-xs font-bold text-gold-light">+5x Inc</button>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-2.5">
+                <div class="relative flex-1">
+                  <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gold font-bold text-sm">$</span>
+                  <input type="number" id="saleroomBidInput" step="1" required class="w-full h-12 bg-obsidian border border-gold/40 rounded-2xl pl-8 pr-3 text-base font-bold text-ivory focus:outline-none focus:border-gold" placeholder="Enter USD" />
+                </div>
+                <button type="submit" id="saleroomPlaceBidBtn" class="gold-btn px-6 py-3 rounded-2xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shrink-0 shadow-lg">
+                  <i class="fa-solid fa-gavel"></i>
+                  <span id="saleroomBidBtnLabel">PLACE BID</span>
+                </button>
+              </div>
+            </form>
+
+            <div id="saleroomEndedBox" class="hidden bg-obsidian border border-gold/40 rounded-2xl p-4 text-center space-y-2.5">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/15 text-gold text-[11px] font-bold uppercase"><i class="fa-solid fa-gavel"></i> Hammer Fallen • Auction Closed</div>
+              <p id="saleroomWinnerText" class="text-xs text-ivory-muted">Winner details</p>
+              <button id="saleroomWinnerCheckoutBtn" onclick="navigateTo('profile')" class="hidden gold-btn w-full py-2.5 rounded-xl text-xs uppercase tracking-wider">Simulated Demo Checkout (No Real Charge)</button>
+            </div>
+
+            <div class="pt-2 border-t border-gold/15">
+              <div class="flex items-center justify-between text-[10px] uppercase text-ivory-dim mb-2">
+                <span class="font-bold text-gold-light"><i class="fa-solid fa-clock-rotate-left mr-1"></i>Bid History</span>
+                <span>10% Platform Fee Applies</span>
+              </div>
+              <div id="saleroomBidFeed" class="max-h-36 overflow-y-auto space-y-1.5 pr-1"></div>
+            </div>
+          </div>
+
+          <div class="bg-velvet rounded-3xl p-4 sm:p-5 border border-gold/25 flex flex-col h-72">
+            <div class="flex items-center justify-between border-b border-gold/15 pb-2.5 mb-2.5">
+              <div class="flex items-center gap-2"><i class="fa-regular fa-comments text-gold"></i><h3 class="text-xs font-bold uppercase text-ivory">Live Saleroom Chat</h3></div>
+              <span class="text-[10px] text-ivory-dim">Ask Seller Live</span>
+            </div>
+            <div id="saleroomChatFeed" class="flex-1 overflow-y-auto space-y-2 pr-1 text-xs"></div>
+            <form onsubmit="sendSaleroomMessage(event)" class="mt-2.5 flex gap-2">
+              <input type="text" id="saleroomChatInput" maxlength="220" required placeholder="Ask about origin, certificate..." class="flex-1 h-11 bg-obsidian border border-gold/30 rounded-xl px-3.5 text-xs text-ivory focus:outline-none focus:border-gold" />
+              <button type="submit" class="gold-btn px-4 rounded-xl text-xs"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: CATEGORIES -->
+    <section id="page-categories" class="app-page hidden space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-gold/20 pb-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-bold">International Marketplace</span>
+          <h1 class="font-serif text-2xl sm:text-3xl font-bold text-ivory mt-0.5">Gemstone & Jewellery Categories</h1>
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <div class="relative flex-1 sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-ivory-dim text-xs"></i>
+            <input type="text" id="catalogSearchInput" oninput="renderCategoriesCatalog()" placeholder="Search emerald, GIA, 18K..." class="w-full h-11 bg-velvet border border-gold/25 rounded-xl pl-9 pr-3 text-xs text-ivory focus:outline-none focus:border-gold" />
+          </div>
+          <select id="catalogStatusFilter" onchange="renderCategoriesCatalog()" class="h-11 bg-velvet border border-gold/25 rounded-xl px-3 text-xs text-ivory focus:outline-none focus:border-gold">
+            <option value="all">All Status</option>
+            <option value="Live">Live</option>
+            <option value="Upcoming">Upcoming</option>
+            <option value="Ended">Ended</option>
+            <option value="Sold">Sold</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="catalogCategoryPills">
+        <button onclick="selectCatalogCategory('All')" data-cat="All" class="cat-pill touch-target shrink-0 px-4 py-2 rounded-xl text-xs font-bold bg-gold text-obsidian">All Categories</button>
+        <button onclick="selectCatalogCategory('Natural Gemstones')" data-cat="Natural Gemstones" class="cat-pill touch-target shrink-0 px-4 py-2 rounded-xl text-xs font-bold bg-velvet text-ivory-muted border border-gold/20">Natural Gemstones</button>
+        <button onclick="selectCatalogCategory('Lab Grown Gemstones')" data-cat="Lab Grown Gemstones" class="cat-pill touch-target shrink-0 px-4 py-2 rounded-xl text-xs font-bold bg-velvet text-ivory-muted border border-gold/20">Lab Grown Gemstones</button>
+        <button onclick="selectCatalogCategory('Silver Jewellery')" data-cat="Silver Jewellery" class="cat-pill touch-target shrink-0 px-4 py-2 rounded-xl text-xs font-bold bg-velvet text-ivory-muted border border-gold/20">Silver Jewellery</button>
+        <button onclick="selectCatalogCategory('Fine Jewellery')" data-cat="Fine Jewellery" class="cat-pill touch-target shrink-0 px-4 py-2 rounded-xl text-xs font-bold bg-velvet text-ivory-muted border border-gold/20">Fine Jewellery</button>
+        <button onclick="selectCatalogCategory('Other Products')" data-cat="Other Products" class="cat-pill touch-target shrink-0 px-4 py-2 rounded-xl text-xs font-bold bg-velvet text-ivory-muted border border-gold/20">Other Products</button>
+      </div>
+
+      <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- PAGE 4: PRODUCT DETAILS -->
+    <section id="page-product-details" class="app-page hidden space-y-5">
+      <div class="flex items-center justify-between">
+        <button onclick="navigateTo('categories')" class="touch-target inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-velvet border border-gold/25 text-xs font-bold text-gold-light hover:text-gold">
+          <i class="fa-solid fa-arrow-left"></i><span>Back to Catalog</span>
+        </button>
+        <button onclick="enterSaleroomForLot(selectedProductId)" class="gold-btn px-4 py-2 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-gavel"></i><span>Join Live Auction Room</span>
+        </button>
+      </div>
+      <div id="productDetailsContent" class="grid grid-cols-1 lg:grid-cols-12 gap-6"></div>
+    </section>
+
+    <!-- PAGE 5: SELLER REGISTRATION -->
+    <section id="seller-register" class="app-page hidden max-w-3xl mx-auto space-y-5">
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="navigateTo('home')" class="touch-target inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-velvet border border-gold/25 text-xs font-bold text-gold-light hover:text-gold">
+          <i class="fa-solid fa-arrow-left"></i><span>Back to Home</span>
+        </button>
+        <span class="px-3 py-1 rounded-full bg-obsidian border border-gold/30 text-[10px] font-bold uppercase tracking-wider text-gold-light">Manual Compliance Review</span>
+      </div>
+
+      <div class="text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 text-gold flex items-center justify-center mx-auto text-xl"><i class="fa-solid fa-globe"></i></div>
+        <span class="text-[11px] uppercase tracking-[0.25em] text-gold font-bold">Global Merchant Onboarding & KYC</span>
+        <h1 class="font-serif text-2xl sm:text-3xl font-bold text-ivory">Worldwide Seller Registration</h1>
+        <p class="text-xs sm:text-sm text-ivory-muted max-w-xl mx-auto">Complete all required compliance fields below to apply as a verified merchant on Mughal Gems Jewellery.</p>
+      </div>
+
+      <div id="sellerAppStatusBanner" class="hidden bg-velvet rounded-3xl p-5 sm:p-7 gold-border-glow space-y-5">
+        <div id="sellerSuccessToastBox" class="bg-emerald-500/15 border border-emerald-400/50 rounded-2xl p-4 flex items-start gap-3">
+          <i class="fa-solid fa-circle-check text-emerald-300 text-lg mt-0.5 shrink-0"></i>
+          <div>
+            <div class="text-xs sm:text-sm font-extrabold uppercase text-emerald-300">Application Details Saved</div>
+            <p class="text-xs text-ivory-muted mt-0.5">Your application details have been saved successfully. Your identity and business documents have NOT been uploaded because cloud storage is not enabled. Your application is pending manual review.</p>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gold/20 pb-4">
+          <div class="flex items-center gap-3">
+            <div id="sellerAppConfirmIcon" class="w-11 h-11 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div>
+              <div class="text-[10px] font-mono uppercase text-gold-light" id="sellerAppRefId">APP REF: #MG-SELLER</div>
+              <h2 id="sellerAppConfirmHeading" class="font-serif text-xl font-bold text-ivory">Pending Approval Screen</h2>
+            </div>
+          </div>
+          <span id="sellerAppStatusBadge" class="self-start sm:self-center px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase bg-amber-500/20 text-amber-300 border border-amber-400/40">STATUS: PENDING</span>
+        </div>
+        <div class="bg-obsidian border border-gold/25 rounded-2xl p-4 flex items-start gap-3">
+          <i class="fa-solid fa-shield-halved text-gold text-base mt-0.5 shrink-0"></i>
+          <div class="text-xs space-y-1">
+            <div class="font-bold text-ivory">Compliance Status: <span id="sellerAppIdentityText" class="text-amber-300 ml-1">Unverified — Pending Manual Review</span></div>
+            <p id="sellerAppStatusDesc" class="text-ivory-muted leading-relaxed">Your application details have been saved successfully. Your identity and business documents have NOT been uploaded because cloud storage is not enabled. Your application is pending manual review. Document files are NOT stored in cloud storage and cannot yet be reviewed by the admin.</p>
+          </div>
+        </div>
+        <div id="sellerAppSummaryGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-obsidian/70 border border-gold/15 rounded-2xl p-4">
+          <div class="space-y-1">
+            <span class="text-[10px] uppercase tracking-wider text-ivory-dim block">Identity Document File</span>
+            <span id="sellerAppIdentityDocStatus" class="font-semibold text-amber-300">NOT stored in cloud storage — cannot yet be reviewed by admin</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] uppercase tracking-wider text-ivory-dim block">Business Document File</span>
+            <span id="sellerAppBusinessDocStatus" class="font-semibold text-amber-300">NOT stored in cloud storage — cannot yet be reviewed by admin</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-3 pt-1">
+          <button type="button" onclick="navigateTo('home')" class="touch-target px-4 py-2.5 rounded-xl bg-obsidian border border-gold/35 text-xs font-bold text-ivory hover:text-gold">Return to Home</button>
+        </div>
+      </div>
+
+      <form id="worldwideSellerForm" novalidate onsubmit="window.submitWorldwideSellerForm(event)" class="bg-velvet rounded-3xl p-5 sm:p-7 gold-border-glow space-y-5">
+        <div class="flex items-center justify-between border-b border-gold/15 pb-3">
+          <div>
+            <h2 class="font-serif text-lg sm:text-xl font-bold text-ivory">Merchant & KYC Application Dossier</h2>
+            <p class="text-[11px] text-ivory-dim">Complete all required fields below.</p>
+          </div>
+          <span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gold/25 text-[10px] font-bold text-gold-light shrink-0">10% Fee Tier</span>
+        </div>
+
+        <div id="sellerFormValidationBox" class="hidden bg-red-950/40 border border-red-500/50 rounded-2xl p-3.5 text-xs text-red-200 space-y-1">
+          <div class="font-bold text-red-300 flex items-center gap-1.5"><i class="fa-solid fa-circle-exclamation"></i><span>Please complete required fields:</span></div>
+          <ul id="sellerFormValidationList" class="list-disc list-inside text-[11px] space-y-0.5"></ul>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="regFullName" class="block text-xs font-semibold text-ivory-muted mb-1.5">1. Full Name *</label>
+            <input type="text" id="regFullName" required placeholder="e.g., Aarav Singhania" class="w-full h-12 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold" />
+          </div>
+          <div>
+            <label for="regStoreName" class="block text-xs font-semibold text-ivory-muted mb-1.5">2. Store / Business Name *</label>
+            <input type="text" id="regStoreName" required placeholder="e.g., Imperial Jaipur Emeralds" class="w-full h-12 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="regEmail" class="block text-xs font-semibold text-ivory-muted mb-1.5">3. Email Address *</label>
+            <input type="email" id="regEmail" required placeholder="merchant@atelier.com" class="w-full h-12 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold" />
+          </div>
+          <div>
+            <label for="regMobileNumber" class="block text-xs font-semibold text-ivory-muted mb-1.5">4. Mobile Number with Country Code *</label>
+            <div class="flex gap-2">
+              <select id="regCountryCode" aria-label="Country Code" class="h-12 bg-obsidian border border-gold/25 rounded-xl px-2.5 text-xs font-bold text-gold-light focus:outline-none focus:border-gold shrink-0">
+                <option value="+91">+91 India</option>
+                <option value="+1">+1 USA</option>
+                <option value="+44">+44 UK</option>
+                <option value="+971">+971 UAE</option>
+              </select>
+              <input type="tel" id="regMobileNumber" required placeholder="98290 12345" class="flex-1 min-w-0 h-12 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold" />
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="regCountry" class="block text-xs font-semibold text-ivory-muted mb-1.5">5. Country *</label>
+            <select id="regCountry" required class="w-full h-12 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold">
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Other">Other International</option>
+            </select>
+          </div>
+          <div>
+            <label for="regBusinessAddress" class="block text-xs font-semibold text-ivory-muted mb-1.5">6. Full Business Address *</label>
+            <textarea id="regBusinessAddress" rows="2" required placeholder="Suite 402, Johari Bazaar, Jaipur, Rajasthan 302003" class="w-full bg-obsidian border border-gold/25 rounded-xl p-3 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold"></textarea>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <span class="block text-xs font-semibold text-ivory-muted mb-1.5">7. Seller Type *</span>
+            <div class="grid grid-cols-2 gap-2.5">
+              <label class="cursor-pointer">
+                <input type="radio" name="regSellerType" value="Individual" checked class="peer sr-only" />
+                <div class="h-12 rounded-xl bg-obsidian border border-gold/25 peer-checked:border-gold peer-checked:bg-gold/15 peer-checked:text-gold-light text-ivory-muted flex items-center justify-center gap-1.5 text-xs font-bold">Individual</div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="regSellerType" value="Registered Business" class="peer sr-only" />
+                <div class="h-12 rounded-xl bg-obsidian border border-gold/25 peer-checked:border-gold peer-checked:bg-gold/15 peer-checked:text-gold-light text-ivory-muted flex items-center justify-center gap-1.5 text-xs font-bold">Business</div>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="regSpecialties" class="block text-xs font-semibold text-ivory-muted mb-1.5">8. Primary Gem & Jewellery Specialties *</label>
+            <input type="text" id="regSpecialties" required placeholder="Natural Emeralds, Kundan Polki, 925 Silver" class="w-full h-12 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-base sm:text-sm text-ivory focus:outline-none focus:border-gold" />
+          </div>
+        </div>
+
+        <div class="space-y-2 bg-obsidian/70 border border-gold/20 rounded-2xl p-4">
+          <label for="regIdentityDocInput" class="text-xs font-bold text-ivory">9. Identity Document Upload (Passport / Govt ID — PDF, JPG, JPEG, PNG, max 5 MB) *</label>
+          <input type="file" id="regIdentityDocInput" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" onchange="handleSellerSingleDocSelect(event, 'identity')" class="w-full bg-velvet border border-gold/30 rounded-xl p-2.5 text-xs text-ivory" />
+          <div id="regIdentityDocPreview" class="text-[11px] text-amber-300">Pending Cloud Storage — Billing Not Enabled</div>
+        </div>
+
+        <div class="space-y-2 bg-obsidian/70 border border-gold/20 rounded-2xl p-4">
+          <label for="regBusinessDocInput" class="text-xs font-bold text-ivory">10. Business Document Upload (PDF, JPG, JPEG, PNG, max 5 MB)</label>
+          <input type="file" id="regBusinessDocInput" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" onchange="handleSellerSingleDocSelect(event, 'business')" class="w-full bg-velvet border border-gold/30 rounded-xl p-2.5 text-xs text-ivory" />
+          <div id="regBusinessDocPreview" class="text-[11px] text-amber-300">Pending Cloud Storage — Billing Not Enabled</div>
+          <p class="text-[10px] text-amber-300 italic pt-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Pending Cloud Storage — Billing Not Enabled. Binary cloud upload is not active on the free Spark plan without billing, so files are not uploaded to cloud storage.</p>
+        </div>
+
+        <label class="flex items-start gap-3 bg-obsidian/70 border border-gold/15 rounded-2xl p-3.5 cursor-pointer">
+          <input type="checkbox" id="regAttestationCheck" required class="mt-0.5 w-4 h-4 accent-[#D4AF37] shrink-0" />
+          <span class="text-[11px] text-ivory-muted leading-relaxed">I confirm that all information is genuine and acknowledge the 10% platform commission fee.</span>
+        </label>
+
+        <button type="submit" id="submitSellerAppBtn" class="gold-btn w-full py-3.5 rounded-2xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i><span>Submit Application</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- PAGE 6: SELLER DASHBOARD -->
+    <section id="page-seller-dashboard" class="app-page hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gold/20 pb-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-bold">Merchant Studio</span>
+          <h1 class="font-serif text-2xl sm:text-3xl font-bold text-ivory mt-0.5">Seller Dashboard & Lot Upload</h1>
+        </div>
+        <div id="sellerDashboardStatusPill" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-velvet border border-gold/30 text-gold-light">Checking Status...</div>
+      </div>
+
+      <div id="sellerUnapprovedGate" class="hidden bg-velvet rounded-3xl p-6 sm:p-8 gold-border-glow text-center max-w-xl mx-auto space-y-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-400/40 text-amber-300 flex items-center justify-center mx-auto text-xl"><i class="fa-solid fa-user-lock"></i></div>
+        <div class="space-y-1.5">
+          <span id="sellerGateStatusBadge" class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-extrabold uppercase">SELLER STATUS: PENDING</span>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-ivory">Approved Seller Authorization Required</h2>
+          <p id="sellerGateMessage" class="text-xs sm:text-sm text-ivory-muted leading-relaxed">Only approved worldwide sellers can upload products and launch live auctions.</p>
+        </div>
+        <div class="flex justify-center gap-3 pt-1">
+          <button type="button" onclick="openWorldwideSellerRegistration()" class="gold-btn px-5 py-3 rounded-xl text-xs uppercase">Apply / View Status</button>
+        </div>
+      </div>
+
+      <div id="sellerApprovedWorkspace" class="hidden space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-velvet rounded-2xl p-4 border border-gold/20"><div class="text-[11px] text-ivory-dim uppercase">Gross Sales</div><div id="sellerGrossSales" class="font-royal text-2xl font-bold text-ivory mt-1">$0.00</div></div>
+          <div class="bg-velvet rounded-2xl p-4 border border-gold/20"><div class="text-[11px] text-amber-300 uppercase">Platform Fee (10%)</div><div id="sellerPlatformFees" class="font-royal text-2xl font-bold text-amber-300 mt-1">-$0.00</div></div>
+          <div class="bg-velvet rounded-2xl p-4 gold-border-glow"><div class="text-[11px] text-gold uppercase font-bold">Net Payout (90%)</div><div id="sellerNetPayout" class="font-royal text-2xl font-bold gold-gradient-text mt-1">$0.00</div></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7 bg-velvet rounded-3xl p-5 sm:p-6 gold-border-glow space-y-4">
+            <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-plus-circle text-gold"></i><span>Upload New Live Lot</span></h2>
+            <form id="sellerUploadLotForm" onsubmit="uploadNewAuctionLot(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div><label class="block text-xs text-ivory-muted mb-1">Lot Title *</label><input type="text" id="upLotTitle" required placeholder="3.10 ct Sapphire" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-xs text-ivory" /></div>
+                <div><label class="block text-xs text-ivory-muted mb-1">Category *</label><select id="upLotCategory" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-xs text-ivory"><option value="Natural Gemstones">Natural Gemstones</option><option value="Lab Grown Gemstones">Lab Grown Gemstones</option><option value="Silver Jewellery">Silver Jewellery</option><option value="Fine Jewellery">Fine Jewellery</option><option value="Other Products">Other Products</option></select></div>
+              </div>
+              <div class="grid grid-cols-3 gap-3">
+                <div><label class="block text-xs text-ivory-muted mb-1">Start Bid ($)</label><input type="number" id="upLotStartBid" min="1" required value="450" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3 text-xs text-ivory" /></div>
+                <div><label class="block text-xs text-ivory-muted mb-1">Increment ($)</label><input type="number" id="upLotIncrement" min="1" required value="25" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3 text-xs text-ivory" /></div>
+                <div><label class="block text-xs text-ivory-muted mb-1">Duration</label><select id="upLotDuration" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-2.5 text-xs text-ivory"><option value="10" selected>10 Mins</option><option value="30">30 Mins</option></select></div>
+              </div>
+              <div class="bg-obsidian/80 border border-gold/20 rounded-2xl p-4 space-y-3">
+                <div class="text-xs font-bold uppercase text-gold-light">Gemological Specs</div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <input type="text" id="upSpecType" required placeholder="Type" class="h-10 bg-velvet border border-gold/20 rounded-xl px-3 text-xs text-ivory" />
+                  <input type="text" id="upSpecCarat" required placeholder="Weight" class="h-10 bg-velvet border border-gold/20 rounded-xl px-3 text-xs text-ivory" />
+                  <input type="text" id="upSpecCut" required placeholder="Cut" class="h-10 bg-velvet border border-gold/20 rounded-xl px-3 text-xs text-ivory" />
+                  <input type="text" id="upSpecClarity" required placeholder="Clarity" class="h-10 bg-velvet border border-gold/20 rounded-xl px-3 text-xs text-ivory" />
+                  <input type="text" id="upSpecOrigin" required placeholder="Origin" class="h-10 bg-velvet border border-gold/20 rounded-xl px-3 text-xs text-ivory" />
+                  <input type="text" id="upSpecCert" required placeholder="Certificate" class="h-10 bg-velvet border border-gold/20 rounded-xl px-3 text-xs text-ivory" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs text-ivory-muted mb-1">Image URL</label>
+                <input type="url" id="upLotImageUrl" placeholder="https://..." class="w-full h-10 bg-obsidian border border-gold/25 rounded-xl px-3.5 text-xs text-ivory" />
+              </div>
+              <div><textarea id="upLotDesc" rows="2" required placeholder="Description & provenance..." class="w-full bg-obsidian border border-gold/25 rounded-xl p-3 text-xs text-ivory"></textarea></div>
+              <button type="submit" class="gold-btn w-full py-3 rounded-2xl text-xs uppercase">Publish Live Lot</button>
+            </form>
+          </div>
+          <div class="lg:col-span-5 bg-velvet rounded-3xl p-5 border border-gold/20 space-y-3">
+            <div class="flex items-center justify-between">
+              <h2 class="font-serif text-xl font-bold text-ivory">Your Listed Lots</h2>
+              <span id="sellerLotsCountBadge" class="text-[11px] text-gold-light font-semibold">0 Lots</span>
+            </div>
+            <div id="sellerMyLotsContainer" class="space-y-3 max-h-[600px] overflow-y-auto pr-1"></div>
+          </div>
+        </div>
+
+        <!-- SELLER ORDER HISTORY & COMMISSION BREAKDOWN -->
+        <div class="bg-velvet rounded-3xl p-5 sm:p-6 border border-gold/25 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold/15 pb-3">
+            <div>
+              <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-receipt text-gold"></i><span>Seller Order History & Commission Ledger</span></h2>
+              <p class="text-[11px] text-ivory-dim mt-0.5">Shows your completed lot orders, buyer details, 10% platform commission, and net amount. Payout Status: Manual / Not Yet Disbursed.</p>
+            </div>
+            <span id="sellerOrdersCountPill" class="self-start sm:self-center px-3 py-1 rounded-full bg-obsidian border border-gold/30 text-[11px] font-bold text-gold-light">0 Orders</span>
+          </div>
+          <div id="sellerOrdersContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: BUYER PROFILE -->
+    <section id="page-profile" class="app-page hidden space-y-6">
+      <div class="bg-velvet rounded-3xl p-5 sm:p-7 gold-border-glow flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div id="profileAvatarBig" class="w-14 h-14 rounded-2xl bg-gold/20 border border-gold text-gold flex items-center justify-center font-royal text-2xl font-bold shrink-0">G</div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 id="profileDisplayName" class="font-serif text-xl sm:text-2xl font-bold text-ivory">Collector</h1>
+              <span id="profileRoleBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-gold/20 text-gold border border-gold/40">Buyer</span>
+            </div>
+            <p id="profileEmailDisplay" class="text-xs text-ivory-muted mt-0.5">collector@mughalgems.live</p>
+            <p id="profileUidDisplay" class="text-[10px] font-mono text-ivory-dim mt-0.5">ID: ---</p>
+          </div>
+        </div>
+        <button onclick="openAuthModal()" class="touch-target px-4 py-2 rounded-xl bg-obsidian border border-gold/35 text-xs font-bold text-gold-light hover:text-gold">Edit Account / Sign In</button>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-trophy text-gold"></i><span>Buyer Order History & Won Auctions</span></h2>
+            <p class="text-[11px] text-ivory-dim">Your personal auction orders with lot image, final bid, seller details, 10% commission breakdown, and settlement status.</p>
+          </div>
+          <span id="buyerOrdersCountPill" class="self-start sm:self-center px-3 py-1 rounded-full bg-velvet border border-gold/30 text-[11px] font-bold text-gold-light">0 Orders</span>
+        </div>
+        <div id="buyerOrdersContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-flag-checkered text-gold"></i><span>Ended Auction Results</span></h2>
+          <span class="text-[11px] text-ivory-dim">Closed lots & verified winners</span>
+        </div>
+        <div id="buyerEndedResultsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-gavel text-gold"></i><span>Lots You Currently Lead</span></h2>
+        <div id="buyerLeadingLotsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: ADMIN DASHBOARD -->
+    <section id="page-admin" class="app-page hidden space-y-6">
+      <div id="adminAccessDeniedBox" class="hidden bg-velvet rounded-3xl p-8 gold-border-glow text-center max-w-lg mx-auto space-y-4 my-10">
+        <div class="w-14 h-14 rounded-2xl bg-red-500/15 border border-red-500/40 text-red-400 flex items-center justify-center mx-auto text-2xl"><i class="fa-solid fa-shield-halved"></i></div>
+        <h2 class="font-serif text-2xl font-bold text-ivory">Administrator Access Restricted</h2>
+        <p class="text-xs sm:text-sm text-ivory-muted leading-relaxed">Secure server-side verification requires a verified Firebase Auth custom claim (admin: true). Ordinary buyers and sellers cannot access this governance console.</p>
+        <div class="pt-2 flex justify-center">
+          <button onclick="navigateTo('home')" class="gold-btn px-5 py-2.5 rounded-xl text-xs uppercase">Return to Home</button>
+        </div>
+      </div>
+
+      <div id="adminAuthorizedContent" class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gold/20 pb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-bold">Platform Governance</span>
+            <h1 class="font-serif text-2xl sm:text-3xl font-bold text-ivory mt-0.5">Administrator Dashboard</h1>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-bold"><i class="fa-solid fa-shield-check mr-1"></i> Verified Admin Session</span>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <div class="bg-velvet rounded-2xl p-4 border border-gold/20"><div class="text-[11px] text-ivory-dim uppercase">Total Lots</div><div id="adminMetricLots" class="font-royal text-2xl font-bold text-ivory mt-1">0</div></div>
+          <div class="bg-velvet rounded-2xl p-4 border border-gold/20"><div class="text-[11px] text-ivory-dim uppercase">Verified Sellers</div><div id="adminMetricSellers" class="font-royal text-2xl font-bold text-ivory mt-1">0</div></div>
+          <div class="bg-velvet rounded-2xl p-4 border border-gold/20"><div class="text-[11px] text-ivory-dim uppercase">Total GMV</div><div id="adminMetricGmv" class="font-royal text-2xl font-bold text-ivory mt-1">$0.00</div></div>
+          <div class="bg-velvet rounded-2xl p-4 gold-border-glow"><div class="text-[11px] text-gold uppercase font-bold">10% Platform Revenue</div><div id="adminMetricCommission" class="font-royal text-2xl font-bold gold-gradient-text mt-1">$0.00</div></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7 bg-velvet rounded-3xl p-5 border border-gold/25 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-user-check text-gold"></i><span>Seller Applications Management</span></h2>
+              <div class="flex items-center gap-1 bg-obsidian p-1 rounded-xl border border-gold/20">
+                <button type="button" onclick="setAdminAppFilter('PENDING')" data-appfilter="PENDING" class="admin-app-filter px-2.5 py-1 rounded-lg text-[11px] font-bold bg-gold text-obsidian">PENDING</button>
+                <button type="button" onclick="setAdminAppFilter('APPROVED')" data-appfilter="APPROVED" class="admin-app-filter px-2.5 py-1 rounded-lg text-[11px] font-bold text-ivory-muted">APPROVED</button>
+                <button type="button" onclick="setAdminAppFilter('ALL')" data-appfilter="ALL" class="admin-app-filter px-2.5 py-1 rounded-lg text-[11px] font-bold text-ivory-muted">ALL</button>
+              </div>
+            </div>
+            <div id="adminApplicationsList" class="space-y-3.5 max-h-[640px] overflow-y-auto pr-1"></div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-5">
+            <div class="bg-velvet rounded-3xl p-5 border border-gold/25 space-y-3">
+              <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-gavel text-gold"></i><span>Auction Moderation</span></h2>
+              <div id="adminAuctionsModList" class="space-y-2.5 max-h-60 overflow-y-auto pr-1"></div>
+            </div>
+            <div class="bg-velvet rounded-3xl p-5 border border-gold/25 space-y-3">
+              <h2 class="font-serif text-xl font-bold text-ivory flex items-center gap-2"><i class="fa-solid fa-coins text-gold"></i><span>10% Commission Orders</span></h2>
+              <div id="adminOrdersList" class="space-y-2.5 max-h-60 overflow-y-auto pr-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- IPHONE FIXED BOTTOM NAVIGATION BAR (5 BUTTONS INTACT) -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-obsidian/95 backdrop-blur-xl border-t border-gold/30 ios-bottom-nav px-2 pt-1.5 flex items-center justify-around">
+    <button onclick="navigateTo('home')" data-bnav="home" class="bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-gold"><i class="fa-solid fa-house text-base"></i><span class="text-[10px] font-bold">Home</span></button>
+    <button onclick="navigateTo('live')" data-bnav="live" class="bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-ivory-dim relative"><i class="fa-solid fa-gavel text-base"></i><span class="text-[10px] font-bold">Live</span></button>
+    <button onclick="navigateTo('categories')" data-bnav="categories" class="bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-ivory-dim"><i class="fa-solid fa-gem text-base"></i><span class="text-[10px] font-bold">Catalog</span></button>
+    <button onclick="navigateTo('seller-register')" data-bnav="seller-register" class="bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-ivory-dim"><i class="fa-solid fa-store text-base"></i><span class="text-[10px] font-bold">Sell</span></button>
+    <button onclick="navigateTo('profile')" data-bnav="profile" class="bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-ivory-dim"><i class="fa-solid fa-user text-base"></i><span class="text-[10px] font-bold">Profile</span></button>
+  </nav>
+
+  <!-- MODALS -->
+  <div id="authModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-velvet rounded-3xl max-w-md w-full p-6 gold-border-glow space-y-4 relative">
+      <button onclick="closeAuthModal()" class="touch-target absolute top-3 right-3 text-ivory-dim hover:text-ivory"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <div class="text-center space-y-1">
+        <h3 class="font-serif text-2xl font-bold text-ivory">Mughal Gems Account</h3>
+        <p class="text-xs text-ivory-muted">Sign in with email/password or register a permanent account.</p>
+      </div>
+
+      <div id="authModeTabs" class="grid grid-cols-2 gap-2 bg-obsidian p-1 rounded-xl border border-gold/20 text-xs">
+        <button type="button" onclick="setAuthMode('signin')" id="authTabSignIn" class="py-2 rounded-lg font-bold bg-gold text-obsidian transition">Sign In</button>
+        <button type="button" onclick="setAuthMode('register')" id="authTabRegister" class="py-2 rounded-lg font-bold text-ivory-muted transition">Register</button>
+      </div>
+
+      <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-3">
+        <div id="authNameGroup" class="hidden space-y-1">
+          <input type="text" id="authNameInput" placeholder="Display Name / Full Name" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3 text-xs text-ivory" />
+        </div>
+        <div>
+          <input type="email" id="authEmailInput" required placeholder="Email Address" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3 text-xs text-ivory" />
+        </div>
+        <div>
+          <input type="password" id="authPasswordInput" required placeholder="Password (min 6 characters)" class="w-full h-11 bg-obsidian border border-gold/25 rounded-xl px-3 text-xs text-ivory" />
+        </div>
+        <button type="submit" id="authSubmitBtn" class="gold-btn w-full py-3 rounded-xl text-xs uppercase font-bold">Sign In</button>
+      </form>
+
+      <div id="loggedInUserBox" class="hidden space-y-3 pt-2">
+        <div class="bg-obsidian border border-gold/25 rounded-xl p-3 text-xs space-y-1">
+          <div class="text-gold font-bold" id="authModalUserEmail">Signed in</div>
+          <div class="text-[10px] text-ivory-dim" id="authModalUserUid">UID: ---</div>
+        </div>
+        <button onclick="handleSignOut()" class="w-full py-2.5 rounded-xl bg-red-600/20 border border-red-500/40 text-red-300 text-xs font-bold hover:bg-red-600/30 transition">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="demoCheckoutModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-velvet rounded-3xl max-w-md w-full p-6 gold-border-glow space-y-4 relative">
+      <button onclick="document.getElementById('demoCheckoutModal').classList.add('hidden')" class="touch-target absolute top-3 right-3 text-ivory-dim"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <div class="space-y-1">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold uppercase">Simulated Demo Checkout (No Real Charge)</span>
+        <h3 id="demoCheckoutSubtitle" class="font-serif text-2xl font-bold text-ivory pt-1">Simulate Order Settlement</h3>
+      </div>
+      <div class="bg-obsidian border border-gold/25 rounded-2xl p-4 space-y-2 text-xs">
+        <div class="flex justify-between items-center"><span class="text-ivory-muted">Total Winning Bid:</span><span id="demoCheckoutTotal" class="font-royal text-lg font-bold text-gold">$0.00</span></div>
+        <div class="flex justify-between text-ivory-dim"><span>Platform Commission (10%):</span><span id="demoCheckoutFee" class="text-gold-light">$0.00</span></div>
+        <p class="text-[11px] text-amber-300/90 pt-1">Simulated Demo Checkout (No Real Charge): Live payment gateway is not connected. Confirming records simulated demo checkout status only.</p>
+      </div>
+      <button onclick="processDemoOrderPayment()" class="gold-btn w-full rounded-2xl text-xs uppercase">Simulated Demo Checkout (No Real Charge)</button>
+    </div>
+  </div>
+
+  <div id="fullSpecsModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-velvet rounded-t-3xl sm:rounded-3xl max-w-xl w-full p-5 sm:p-6 gold-border-glow space-y-4 relative max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b border-gold/20 pb-3">
+        <h3 id="specsModalTitle" class="font-serif text-xl font-bold text-ivory">Gemological Specifications</h3>
+        <button onclick="closeFullSpecsDrawer()" class="touch-target text-ivory-dim"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+      <div id="specsModalBody" class="space-y-4 text-xs"></div>
+      <button onclick="closeFullSpecsDrawer()" class="gold-btn w-full py-3 rounded-2xl text-xs uppercase">Return to Saleroom</button>
+    </div>
+  </div>
+
+  <div id="toastStack" class="fixed top-20 right-3.5 z-50 flex flex-col gap-2 max-w-xs w-full pointer-events-none"></div>
+
+  <!-- FIREBASE & APPLICATION LOGIC -->
+  <script type="module">
+    import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, addDoc, onSnapshot, runTransaction, query, where } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    import { getStorage } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
+
+    // Verified Firebase Web App configuration for mughal-gems-jewellery-1d5b7
+    const FirebaseConfig = {
+      apiKey: "AIzaSyAKsS_I0OGxbQmDwzA9QoPyoF0Vubvfe7w",
+      authDomain: "mughal-gems-jewellery-1d5b7.firebaseapp.com",
+      projectId: "mughal-gems-jewellery-1d5b7",
+      storageBucket: "mughal-gems-jewellery-1d5b7.firebasestorage.app",
+      messagingSenderId: "536828191390",
+      appId: "1:536828191390:web:efcca49dfc75fad640118f",
+      measurementId: "G-QF3RCPR0WP"
+    };
+
+    // Safe duplicate initialization check
+    let app;
+    if (getApps().length > 0) {
+      const existingApp = getApp();
+      if (existingApp.options.projectId === FirebaseConfig.projectId) {
+        app = existingApp;
+      } else {
+        app = initializeApp(FirebaseConfig, "mughalGemsSecondaryApp_" + Date.now());
+      }
+    } else {
+      app = initializeApp(FirebaseConfig);
+    }
+
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+
+    const appId = 'mughal-gems-jewellery';
+
+    // Canonical Firestore collection helpers
+    const usersCol = () => collection(db, 'artifacts', appId, 'public', 'data', 'users');
+    const appsCol = () => collection(db, 'artifacts', appId, 'public', 'data', 'sellerApplications');
+    const auctionsCol = () => collection(db, 'artifacts', appId, 'public', 'data', 'auctions');
+    const ordersCol = () => collection(db, 'artifacts', appId, 'public', 'data', 'orders');
+    const auctionDoc = (lotId) => doc(db, 'artifacts', appId, 'public', 'data', 'auctions', lotId);
+    const bidsCol = (lotId) => collection(db, 'artifacts', appId, 'public', 'data', 'auctions', lotId, 'bids');
+    const messagesCol = (lotId) => collection(db, 'artifacts', appId, 'public', 'data', 'auctions', lotId, 'messages');
+
+    let currentUser = null;
+    let currentProfile = null;
+    let usersList = [];
+    let applicationsList = [];
+    let auctionsList = [];
+    let ordersList = [];
+
+    let activePage = 'home';
+    let activeSaleroomId = null;
+    let selectedProductId = null;
+    let catalogCategoryFilter = 'All';
+    let activeCheckoutOrderId = null;
+    let selectedIdentityDoc = null;
+    let selectedBusinessDoc = null;
+    const MAX_KYC_FILE_BYTES = 5 * 1024 * 1024;
+    const ALLOWED_KYC_MIME_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
+    const ALLOWED_KYC_EXTENSIONS = ['.pdf', '.jpg', '.jpeg', '.png'];
+    const STORAGE_UNAVAILABLE_STATUS = 'Pending Cloud Storage — Billing Not Enabled';
+    let adminAppFilter = 'PENDING';
+    let authMode = 'signin';
+    let webcamStream = null;
+    let unsubBids = null;
+    let unsubChat = null;
+    let unsubBuyerOrders = null;
+    let unsubSellerOrders = null;
+    let unsubAdminOrders = null;
+    let unsubOwnProfile = null;
+    let unsubOwnApplication = null;
+    let unsubAdminUsers = null;
+    let unsubAdminApplications = null;
+    let unsubAuctions = null;
+    let buyerOrdersList = [];
+    let sellerOrdersList = [];
+    let adminOrdersList = [];
+    let isAdminUser = false;
+    let alertedOrderIds = new Set();
+    let activeCurrency = 'USD';
+    let isSubmittingSellerApp = false;
+    let isPlacingBid = false;
+    let finalizedLotIds = new Set();
+    let saleroomCountdownInterval = null;
+    let listenersAttached = false;
+
+    // Classify lot status consistently across saleroom, catalog, and dashboards
+    function getAuctionStatusInfo(lot, now = Date.now()) {
+      const startsAt = Number(lot?.startsAt || 0);
+      const endsAt = Number(lot?.endsAt || 0);
+      const rawStatus = (lot?.status || 'live').toLowerCase();
+      const hasWinner = Number(lot?.bidCount || 0) > 0 && Boolean(lot?.highestBidderUid);
+      const isSold = rawStatus === 'sold' || Boolean(lot?.orderCreated) || ((rawStatus === 'ended' || (endsAt > 0 && endsAt <= now)) && hasWinner && !lot?.isDemo);
+
+      if (isSold) {
+        return {
+          label: 'Sold',
+          badgeClass: 'bg-emerald-500/20 text-emerald-300 border border-emerald-400/40',
+          isLive: false,
+          isUpcoming: false,
+          isEnded: true,
+          isSold: true
+        };
+      }
+      if (rawStatus === 'upcoming' || (startsAt > now && rawStatus !== 'ended')) {
+        return {
+          label: 'Upcoming',
+          badgeClass: 'bg-sky-500/20 text-sky-300 border border-sky-400/40',
+          isLive: false,
+          isUpcoming: true,
+          isEnded: false,
+          isSold: false
+        };
+      }
+      if (rawStatus === 'ended' || (endsAt > 0 && endsAt <= now)) {
+        return {
+          label: 'Ended',
+          badgeClass: 'bg-obsidian/90 text-ivory-muted border border-gold/25',
+          isLive: false,
+          isUpcoming: false,
+          isEnded: true,
+          isSold: false
+        };
+      }
+      return {
+        label: 'Live',
+        badgeClass: 'bg-red-600/90 text-white border border-red-400/40',
+        isLive: true,
+        isUpcoming: false,
+        isEnded: false,
+        isSold: false
+      };
+    }
+
+    function mergeVisibleOrders() {
+      if (isAdminUser && adminOrdersList.length > 0) {
+        ordersList = [...adminOrdersList].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        return;
+      }
+      const map = new Map();
+      buyerOrdersList.forEach(o => map.set(o.id, o));
+      sellerOrdersList.forEach(o => map.set(o.id, o));
+      ordersList = Array.from(map.values()).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+    }
+
+    const CURRENCY_CONFIG = {
+      USD: { symbol: '$', rate: 1, locale: 'en-US', decimals: 2 },
+      INR: { symbol: '₹', rate: 84, locale: 'en-IN', decimals: 0 },
+      EUR: { symbol: '€', rate: 0.92, locale: 'de-DE', decimals: 2 },
+      GBP: { symbol: '£', rate: 0.79, locale: 'en-GB', decimals: 2 }
+    };
+
+    window.changeCurrency = (curr) => { activeCurrency = curr; renderAll(); };
+
+    function formatPrice(usdVal) {
+      const cfg = CURRENCY_CONFIG[activeCurrency] || CURRENCY_CONFIG.USD;
+      const converted = (Number(usdVal) || 0) * cfg.rate;
+      return cfg.symbol + converted.toLocaleString(cfg.locale, { minimumFractionDigits: cfg.decimals, maximumFractionDigits: cfg.decimals });
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function notify(msg, tone = 'gold') {
+      const stack = document.getElementById('toastStack');
+      const el = document.createElement('div');
+      el.className = `pointer-events-auto bg-velvet/95 backdrop-blur-md border ${tone === 'error' ? 'border-red-500/60 text-red-300' : 'border-gold/50 text-gold-light'} rounded-2xl px-4 py-3 shadow-2xl text-xs flex items-center gap-2.5`;
+      el.innerHTML = `<i class="fa-solid fa-gem text-gold shrink-0"></i><span>${escapeHtml(msg)}</span>`;
+      stack.appendChild(el);
+      setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 300); }, 3600);
+    }
+
+    const DEMO_SAMPLE_LOTS = [
+      {
+        id: 'demo-lot-zambian-emerald',
+        lotCode: 'DEMO-101',
+        isDemo: true,
+        title: '1.50 ct Natural Zambian Emerald — Octagon Step Cut',
+        category: 'Natural Gemstones',
+        imageUrl: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=1200&q=85',
+        startingBid: 1200, currentBid: 1200, minIncrement: 50, bidCount: 0,
+        sellerUid: 'demo-merchant-jaipur', sellerName: 'Mughal Heritage Lapidary (DEMO)', sellerCountry: 'Jaipur, India',
+        status: 'live', orderCreated: false,
+        specs: { gemstoneType: 'Natural Emerald', caratWeight: '1.50 ct', cut: 'Octagon Step Cut', shape: 'Octagonal', dimensions: '7.85 x 6.10 x 4.20 mm', clarity: 'Eye-Clean', origin: 'Zambia', treatment: 'Minor Cedar Oil', certification: 'GIA #DEMO-7492' },
+        description: 'DEMO SAMPLE LOT: Exceptional 1.50 carat natural Zambian emerald with rich Muzo green color.'
+      },
+      {
+        id: 'demo-lot-lab-diamond',
+        lotCode: 'DEMO-102',
+        isDemo: true,
+        title: '2.20 ct Type IIa Lab-Grown Oval Diamond — D / VVS1',
+        category: 'Lab Grown Gemstones',
+        imageUrl: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=85',
+        startingBid: 950, currentBid: 950, minIncrement: 25, bidCount: 0,
+        sellerUid: 'demo-merchant-surat', sellerName: 'Aurelia CVD Atelier (DEMO)', sellerCountry: 'Surat, India',
+        status: 'live', orderCreated: false,
+        specs: { gemstoneType: 'Lab-Grown Diamond', caratWeight: '2.20 ct', cut: 'Oval Brilliant', shape: 'Oval', dimensions: '10.42 x 7.38 x 4.55 mm', clarity: 'VVS1', origin: 'Laboratory', treatment: 'As-Grown', certification: 'IGI #DEMO-558' },
+        description: 'DEMO SAMPLE LOT: Internally pure Type IIa CVD lab-grown oval diamond.'
+      },
+      {
+        id: 'demo-lot-silver-necklace',
+        lotCode: 'DEMO-103',
+        isDemo: true,
+        title: 'Royal Mughal 925 Sterling Silver & Turquoise Collar',
+        category: 'Silver Jewellery',
+        imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85',
+        startingBid: 320, currentBid: 320, minIncrement: 15, bidCount: 0,
+        sellerUid: 'demo-merchant-jaipur', sellerName: 'Zaveri Silver Silversmiths (DEMO)', sellerCountry: 'Jaipur, India',
+        status: 'live', orderCreated: false,
+        specs: { gemstoneType: 'Turquoise & 925 Silver', caratWeight: '68.40 g', cut: 'Cabochon', shape: 'Oval', dimensions: '420 mm', clarity: 'Opaque', origin: 'Jaipur, India', treatment: 'Stabilized', certification: 'BIS 925' },
+        description: 'DEMO SAMPLE LOT: Hand-engraved 925 sterling silver collar inspired by 17th-century Mughal court motifs.'
+      },
+      {
+        id: 'demo-lot-fine-jewellery',
+        lotCode: 'DEMO-104',
+        isDemo: true,
+        title: '18K Yellow Gold Burmese Ruby & Diamond Royal Ring',
+        category: 'Fine Jewellery',
+        imageUrl: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85',
+        startingBid: 2400, currentBid: 2400, minIncrement: 100, bidCount: 0,
+        sellerUid: 'demo-merchant-geneva', sellerName: 'Maison Gulab Fine Jewels (DEMO)', sellerCountry: 'Geneva, Switzerland',
+        status: 'live', orderCreated: false,
+        specs: { gemstoneType: 'Natural Ruby in 18K Gold', caratWeight: '1.85 ct', cut: 'Cushion', shape: 'Cushion', dimensions: '8.12 x 6.95 mm', clarity: 'VS1', origin: 'Mogok, Burma', treatment: 'Unheated', certification: 'GRS Swiss' },
+        description: 'DEMO SAMPLE LOT: 18K yellow gold cocktail ring featuring an unheated Burmese ruby.'
+      }
+    ];
+
+    // Demo lots are display-only fallbacks. Never seed shared Firestore data from a buyer session.
+    async function seedDemoLotsIfEmpty() {
+      return false;
+    }
+
+    window.navigateTo = (pageId) => {
+      activePage = pageId;
+      document.querySelectorAll('.app-page').forEach(sec => {
+        sec.classList.toggle('hidden', sec.id !== `page-${pageId}` && sec.id !== pageId);
+      });
+      document.querySelectorAll('.top-nav-btn').forEach(btn => {
+        const active = btn.dataset.page === pageId;
+        btn.className = active ? 'top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gold text-obsidian transition' : 'top-nav-btn px-3.5 py-1.5 rounded-full text-xs font-semibold text-ivory-muted hover:text-ivory transition flex items-center gap-1.5';
+      });
+      document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+        const active = btn.dataset.bnav === pageId;
+        btn.className = active ? 'bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-gold relative' : 'bottom-nav-btn touch-target flex flex-col items-center justify-center gap-0.5 text-ivory-dim relative';
+      });
+      if (pageId === 'live' && activeSaleroomId) renderLiveSaleroom();
+      if (pageId === 'seller-register') renderSellerRegistrationPage();
+      if (pageId === 'admin') renderAdminDashboardPage();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.openWorldwideSellerRegistration = () => navigateTo('seller-register');
+    window.openCategoryCatalog = (cat) => { catalogCategoryFilter = cat; navigateTo('categories'); renderCategoriesCatalog(); };
+    window.selectCatalogCategory = (cat) => openCategoryCatalog(cat);
+
+    // AUTH MODE SWITCHING (SIGN IN / REGISTER)
+    window.setAuthMode = (mode) => {
+      authMode = mode;
+      const isReg = mode === 'register';
+      document.getElementById('authTabSignIn').className = isReg ? 'py-2 rounded-lg font-bold text-ivory-muted transition' : 'py-2 rounded-lg font-bold bg-gold text-obsidian transition';
+      document.getElementById('authTabRegister').className = isReg ? 'py-2 rounded-lg font-bold bg-gold text-obsidian transition' : 'py-2 rounded-lg font-bold text-ivory-muted transition';
+      document.getElementById('authNameGroup').classList.toggle('hidden', !isReg);
+      document.getElementById('authSubmitBtn').textContent = isReg ? 'Register Permanent Account' : 'Sign In';
+    };
+
+    window.openAuthModal = () => {
+      document.getElementById('authModal').classList.remove('hidden');
+      updateAuthModalUI();
+    };
+    window.closeAuthModal = () => document.getElementById('authModal').classList.add('hidden');
+
+    function updateAuthModalUI() {
+      const isLogged = Boolean(currentUser);
+      document.getElementById('authForm').classList.toggle('hidden', isLogged);
+      document.getElementById('authModeTabs').classList.toggle('hidden', isLogged);
+      document.getElementById('loggedInUserBox').classList.toggle('hidden', !isLogged);
+      if (isLogged) {
+        document.getElementById('authModalUserEmail').textContent = currentUser.email || 'Authenticated User';
+        document.getElementById('authModalUserUid').textContent = `UID: ${currentUser.uid}`;
+      }
+    }
+
+    window.handleAuthSubmit = async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('authEmailInput').value.trim();
+      const password = document.getElementById('authPasswordInput').value;
+      const nameInput = document.getElementById('authNameInput').value.trim();
+
+      try {
+        if (authMode === 'register') {
+          const cred = await createUserWithEmailAndPassword(auth, email, password);
+          const user = cred.user;
+          const initialProfile = {
+            uid: user.uid,
+            name: nameInput || email.split('@')[0],
+            email: email,
+            country: 'Global',
+            sellerStatus: 'none',
+            createdAt: Date.now()
+          };
+          await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'users', user.uid), initialProfile);
+          notify('Account registered successfully!', 'gold');
+        } else {
+          await signInWithEmailAndPassword(auth, email, password);
+          notify('Signed in successfully.', 'gold');
+        }
+        closeAuthModal();
+      } catch (err) {
+        notify(err.message || 'Authentication error', 'error');
+      }
+    };
+
+    window.handleSignOut = async () => {
+      try {
+        await signOut(auth);
+        currentUser = null;
+        currentProfile = null;
+        isAdminUser = false;
+        const adminBtn = document.getElementById('headerAdminBtn');
+        if (adminBtn) adminBtn.style.display = 'none';
+        closeAuthModal();
+        notify('Signed out.', 'gold');
+        renderAll();
+      } catch (e) { notify('Sign out error', 'error'); }
+    };
+
+    // DYNAMIC ADMIN CLAIM VERIFICATION & UI TOGGLE (idTokenResult.claims.admin === true ONLY)
+    async function checkAdminClaimAndUpdateUI(user) {
+      const adminBtn = document.getElementById('headerAdminBtn');
+      if (!user) {
+        isAdminUser = false;
+        if (adminBtn) adminBtn.style.display = 'none';
+        return;
+      }
+      try {
+        const tokenResult = await user.getIdTokenResult(true);
+        isAdminUser = tokenResult.claims.admin === true;
+        if (adminBtn) {
+          adminBtn.style.display = isAdminUser ? 'flex' : 'none';
+        }
+        if (!isAdminUser) { usersList = []; adminOrdersList = []; }
+      } catch (e) {
+        isAdminUser = false;
+        if (adminBtn) adminBtn.style.display = 'none';
+      }
+    }
+
+    function stopUserScopedListeners() {
+      [unsubBids, unsubChat, unsubBuyerOrders, unsubSellerOrders, unsubAdminOrders,
+       unsubOwnProfile, unsubOwnApplication, unsubAdminUsers, unsubAdminApplications, unsubAuctions]
+        .forEach(unsub => { if (typeof unsub === 'function') { try { unsub(); } catch (_) {} } });
+      unsubBids = unsubChat = unsubBuyerOrders = unsubSellerOrders = unsubAdminOrders = null;
+      unsubOwnProfile = unsubOwnApplication = unsubAdminUsers = unsubAdminApplications = unsubAuctions = null;
+      if (saleroomCountdownInterval) { clearInterval(saleroomCountdownInterval); saleroomCountdownInterval = null; }
+      if (turntableTimer) { clearInterval(turntableTimer); turntableTimer = null; }
+      if (webcamStream) { webcamStream.getTracks().forEach(track => track.stop()); webcamStream = null; }
+      listenersAttached = false;
+      usersList = []; applicationsList = []; ordersList = [];
+      buyerOrdersList = []; sellerOrdersList = []; adminOrdersList = [];
+      finalizedLotIds.clear();
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      const previousUid = currentUser?.uid || null;
+      if (previousUid && previousUid !== (user?.uid || null)) stopUserScopedListeners();
+      currentUser = user;
+      if (user) {
+        try {
+          const userRef = doc(db, 'artifacts', appId, 'public', 'data', 'users', user.uid);
+          const snap = await getDoc(userRef);
+          if (!snap.exists()) {
+            const initialProfile = {
+              uid: user.uid,
+              name: user.email ? user.email.split('@')[0] : `Collector-${user.uid.slice(0, 5)}`,
+              email: user.email || '',
+              country: 'Global',
+              sellerStatus: 'none',
+              createdAt: Date.now()
+            };
+            await setDoc(userRef, initialProfile);
+            currentProfile = initialProfile;
+          } else {
+            currentProfile = snap.data();
+          }
+          await checkAdminClaimAndUpdateUI(user);
+          attachRealtimeListeners();
+        } catch (err) {
+          console.error('Account initialization failed:', err);
+          notify('Account data could not be loaded. Check your Firebase rules.', 'error');
+        }
+      } else {
+        stopUserScopedListeners();
+        currentProfile = null;
+        isAdminUser = false;
+        usersList = []; applicationsList = []; ordersList = [];
+        buyerOrdersList = []; sellerOrdersList = []; adminOrdersList = [];
+        const adminBtn = document.getElementById('headerAdminBtn');
+        if (adminBtn) adminBtn.style.display = 'none';
+      }
+      renderAll();
+    });
+
+    // STRICT SERVER-SIDE ADMIN VERIFICATION FUNCTION
+    window.verifyAndOpenAdminDashboard = async () => {
+      if (!auth.currentUser) {
+        notify('Please sign in to access admin.', 'error');
+        openAuthModal();
+        return;
+      }
+      try {
+        const tokenResult = await auth.currentUser.getIdTokenResult(true);
+        if (tokenResult.claims.admin === true) {
+          closeAuthModal();
+          navigateTo('admin');
+        } else {
+          closeAuthModal();
+          navigateTo('admin');
+          notify('Administrator Access Restricted.', 'error');
+        }
+      } catch (err) {
+        notify('Admin verification failed.', 'error');
+      }
+    };
+
+    function attachRealtimeListeners() {
+      if (listenersAttached || !currentUser) return;
+      listenersAttached = true;
+      const uid = currentUser.uid;
+
+      // Ordinary accounts only read their own profile and seller application.
+      unsubOwnProfile = onSnapshot(doc(db, 'artifacts', appId, 'public', 'data', 'users', uid), (snap) => {
+        if (snap.exists()) currentProfile = snap.data();
+        renderAll();
+      }, (err) => console.error('Own profile listener:', err));
+
+      unsubOwnApplication = onSnapshot(doc(db, 'artifacts', appId, 'public', 'data', 'sellerApplications', uid), (snap) => {
+        applicationsList = snap.exists() ? [{ id: snap.id, ...snap.data() }] : [];
+        renderAll();
+      }, (err) => console.error('Own seller application listener:', err));
+
+      // Auction listings are visible to signed-in marketplace users.
+      unsubAuctions = onSnapshot(auctionsCol(), (snap) => {
+        auctionsList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        if (snap.empty) {
+          const now = Date.now();
+          auctionsList = DEMO_SAMPLE_LOTS.map(lot => ({ ...lot, startsAt: 0, endsAt: now + 60 * 60 * 1000 }));
+        }
+        auctionsList.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        if (!activeSaleroomId && auctionsList.length > 0) activeSaleroomId = auctionsList[0].id;
+        if (!selectedProductId && auctionsList.length > 0) selectedProductId = auctionsList[0].id;
+        renderAll();
+      }, (err) => {
+        console.error('Auction listener:', err);
+        auctionsList = DEMO_SAMPLE_LOTS.map(lot => ({ ...lot, startsAt: 0, endsAt: Date.now() + 60 * 60 * 1000 }));
+        renderAll();
+      });
+
+      unsubBuyerOrders = onSnapshot(query(ordersCol(), where('buyerUid', '==', uid)), (snap) => {
+        buyerOrdersList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        mergeVisibleOrders(); checkWinnerAlerts(); renderAll();
+      }, (err) => console.error('Buyer orders listener:', err));
+
+      unsubSellerOrders = onSnapshot(query(ordersCol(), where('sellerUid', '==', uid)), (snap) => {
+        sellerOrdersList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        mergeVisibleOrders(); renderAll();
+      }, (err) => console.error('Seller orders listener:', err));
+
+      if (isAdminUser) {
+        unsubAdminUsers = onSnapshot(usersCol(), (snap) => {
+          usersList = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll();
+        }, (err) => console.error('Admin users listener:', err));
+        unsubAdminApplications = onSnapshot(appsCol(), (snap) => {
+          applicationsList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          applicationsList.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0)); renderAll();
+        }, (err) => console.error('Admin applications listener:', err));
+        if (!unsubAdminOrders) {
+          unsubAdminOrders = onSnapshot(ordersCol(), (snap) => {
+            adminOrdersList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+            mergeVisibleOrders(); renderAll();
+          }, (err) => console.error('Admin orders listener:', err));
+        }
+      } else {
+        usersList = [];
+        adminOrdersList = [];
+      }
+      startSaleroomCountdown();
+    }
+
+    function renderAll() {
+      syncIdentityUI();
+      renderHomePage();
+      renderCategoriesCatalog();
+      if (activePage === 'live' && activeSaleroomId) renderLiveSaleroom();
+      if (activePage === 'product-details' && selectedProductId) renderProductDetailsPage();
+      renderSellerRegistrationPage();
+      renderSellerDashboardPage();
+      renderBuyerProfilePage();
+      renderAdminDashboardPage();
+    }
+
+    function syncIdentityUI() {
+      if (!currentProfile) {
+        document.getElementById('headerUserName').textContent = 'Guest';
+        document.getElementById('headerUserRole').textContent = 'Sign In';
+        document.getElementById('headerAvatar').innerHTML = '<i class="fa-regular fa-user"></i>';
+        return;
+      }
+      const isApprovedSeller = (currentProfile.sellerStatus || '').toUpperCase() === 'APPROVED';
+      document.getElementById('headerUserName').textContent = currentProfile.name || 'Collector';
+      document.getElementById('headerUserRole').textContent = isApprovedSeller ? 'Worldwide Seller' : 'Buyer';
+      document.getElementById('headerAvatar').textContent = (currentProfile.name || 'G').charAt(0).toUpperCase();
+
+      document.getElementById('profileDisplayName').textContent = currentProfile.name || 'Collector';
+      document.getElementById('profileRoleBadge').textContent = isApprovedSeller ? 'Worldwide Seller' : 'Buyer';
+      document.getElementById('profileEmailDisplay').textContent = `${currentProfile.email || 'guest@mughalgems.live'} • ${currentProfile.country || 'Global'}`;
+      document.getElementById('profileUidDisplay').textContent = `Account ID: ${currentProfile.uid}`;
+      document.getElementById('profileAvatarBig').textContent = (currentProfile.name || 'G').charAt(0).toUpperCase();
+    }
+
+    let turntableTimer = null;
+    let turntableAngle = 0;
+    window.scrubTurntableAngle = (value) => {
+      turntableAngle = Number(value) || 0;
+      const image = document.getElementById('saleroomLotImg');
+      if (image) image.style.transform = `rotate(${turntableAngle}deg)`;
+      const label = document.getElementById('turntableAngleLabel');
+      if (label) label.textContent = `${turntableAngle}°`;
+    };
+    window.toggleTurntableAuto = () => {
+      const button = document.getElementById('turntablePlayPauseBtn');
+      if (turntableTimer) {
+        clearInterval(turntableTimer); turntableTimer = null;
+        if (button) button.innerHTML = '<i class="fa-solid fa-play mr-1"></i> Auto';
+        return;
+      }
+      turntableTimer = setInterval(() => {
+        turntableAngle = (turntableAngle + 2) % 360;
+        window.scrubTurntableAngle(turntableAngle);
+        const slider = document.getElementById('turntableAngleSlider');
+        if (slider) slider.value = String(turntableAngle);
+      }, 80);
+      if (button) button.innerHTML = '<i class="fa-solid fa-pause mr-1"></i> Pause';
+    };
+
+    window.renderCategoriesCatalog = () => {
+      const grid = document.getElementById('catalogGrid');
+      if (!grid) return;
+      const search = (document.getElementById('catalogSearchInput')?.value || '').trim().toLowerCase();
+      const status = document.getElementById('catalogStatusFilter')?.value || 'All';
+      const now = Date.now();
+      const rows = auctionsList.filter(lot => {
+        const matchesCategory = catalogCategoryFilter === 'All' || lot.category === catalogCategoryFilter;
+        const haystack = `${lot.title || ''} ${lot.description || ''} ${lot.category || ''} ${lot.specs?.gemstoneType || ''}`.toLowerCase();
+        const matchesSearch = !search || haystack.includes(search);
+        const st = getAuctionStatusInfo(lot, now);
+        const matchesStatus = status === 'All' || status === 'all' || st.label.toLowerCase() === status.toLowerCase();
+        return matchesCategory && matchesSearch && matchesStatus;
+      });
+      grid.innerHTML = rows.map(renderLotCardHtml).join('') || '<p class="col-span-full text-center text-sm text-ivory-dim py-10">No lots match your search.</p>';
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        const active = btn.dataset.cat === catalogCategoryFilter;
+        btn.classList.toggle('bg-gold', active); btn.classList.toggle('text-obsidian', active);
+        btn.classList.toggle('bg-velvet', !active); btn.classList.toggle('text-ivory-muted', !active);
+      });
+    };
+
+    function renderHomePage() {
+      const now = Date.now();
+      const activeLots = auctionsList.filter(a => getAuctionStatusInfo(a, now).isLive);
+      document.getElementById('homeActiveCountPill').textContent = `${activeLots.length} Live Lots`;
+
+      const spotlightLot = activeLots[0] || auctionsList[0];
+      const spotContainer = document.getElementById('homeSpotlightContainer');
+      if (spotlightLot) {
+        const st = getAuctionStatusInfo(spotlightLot, now);
+        spotContainer.innerHTML = `
+          <div onclick="enterSaleroomForLot('${spotlightLot.id}')" class="cursor-pointer bg-obsidian/90 border border-gold/35 rounded-3xl overflow-hidden shadow-2xl group">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img src="${escapeHtml(spotlightLot.imageUrl)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 flex gap-1.5">
+                ${spotlightLot.isDemo ? '<span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-obsidian text-[10px] font-extrabold uppercase">DEMO</span>' : ''}
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${st.badgeClass}">${st.label}</span>
+              </div>
+            </div>
+            <div class="p-4 flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <div class="text-[10px] uppercase text-gold-light">${escapeHtml(spotlightLot.category)}</div>
+                <h3 class="font-serif text-base font-bold text-ivory truncate">${escapeHtml(spotlightLot.title)}</h3>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-[10px] text-ivory-dim">Current Bid</div>
+                <div class="font-royal text-base font-bold text-gold">${formatPrice(spotlightLot.currentBid)}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      document.getElementById('homeLotsGrid').innerHTML = auctionsList.slice(0, 4).map(lot => renderLotCardHtml(lot)).join('');
+    }
+
+    function renderLotCardHtml(lot) {
+      const st = getAuctionStatusInfo(lot);
+      const hasWinner = Number(lot.bidCount || 0) > 0 && Boolean(lot.highestBidderName);
+      return `
+        <article class="bg-velvet rounded-3xl overflow-hidden border border-gold/20 hover:border-gold/60 transition flex flex-col shadow-xl">
+          <div onclick="openProductDetails('${lot.id}')" class="cursor-pointer relative aspect-[4/3] bg-obsidian overflow-hidden">
+            <img src="${escapeHtml(lot.imageUrl)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 left-2.5 flex gap-1.5 flex-wrap">
+              ${lot.isDemo ? '<span class="px-2 py-0.5 rounded-full bg-amber-500 text-obsidian text-[10px] font-extrabold uppercase">DEMO</span>' : ''}
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${st.badgeClass}">${st.label}</span>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+            <div onclick="openProductDetails('${lot.id}')" class="cursor-pointer space-y-1">
+              <div class="text-[10px] uppercase text-gold-light font-semibold">${escapeHtml(lot.category)}</div>
+              <h3 class="font-serif text-base font-bold text-ivory line-clamp-2">${escapeHtml(lot.title)}</h3>
+              ${st.isEnded ? `<div class="text-[11px] text-ivory-muted pt-0.5">${hasWinner ? `Winner: <strong class="text-gold-light">${escapeHtml(lot.highestBidderName)}</strong>` : 'Closed without bids'}</div>` : ''}
+            </div>
+            <div class="pt-3 border-t border-gold/15 flex items-center justify-between gap-2">
+              <div>
+                <span class="text-[10px] text-ivory-dim block">${st.isEnded ? 'Final Bid' : 'Current Bid'}</span>
+                <span class="font-royal text-base font-bold text-gold">${formatPrice(lot.currentBid)}</span>
+              </div>
+              <button onclick="enterSaleroomForLot('${lot.id}')" class="gold-btn px-3.5 py-2 rounded-xl text-[11px] uppercase">${st.isLive ? 'Bid Live' : st.isUpcoming ? 'Preview' : 'Result'}</button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    window.enterSaleroomForLot = (lotId) => {
+      activeSaleroomId = lotId;
+      navigateTo('live');
+      renderLiveSaleroom();
+      subscribeSaleroomSubcollections(lotId);
+    };
+
+    function renderLiveSaleroom() {
+      const lot = auctionsList.find(a => a.id === activeSaleroomId) || auctionsList[0];
+      if (!lot) return;
+      activeSaleroomId = lot.id;
+
+      document.getElementById('saleroomLotSwitcher').innerHTML = auctionsList.map(item => `
+        <button onclick="enterSaleroomForLot('${item.id}')" class="touch-target shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border transition ${item.id === lot.id ? 'bg-gold text-obsidian border-gold' : 'bg-velvet text-ivory-muted border-gold/20'}">
+          <span class="max-w-[140px] truncate">${escapeHtml(item.title)}</span>
+        </button>
+      `).join('');
+
+      document.getElementById('saleroomDemoBanner').classList.toggle('hidden', !lot.isDemo);
+      document.getElementById('saleroomLotTitle').textContent = lot.title;
+      document.getElementById('saleroomLotImg').src = lot.imageUrl;
+      const codeEl = document.getElementById('saleroomLotCode');
+      if (codeEl) codeEl.textContent = `LOT #${lot.lotCode || lot.id.toUpperCase()}`;
+
+      const now = Date.now();
+      const stInfo = getAuctionStatusInfo(lot, now);
+      const typeBadge = document.getElementById('saleroomTypeBadge');
+      if (typeBadge) {
+        typeBadge.textContent = lot.isDemo ? `DEMO • ${stInfo.label.toUpperCase()}` : stInfo.label.toUpperCase();
+        typeBadge.className = lot.isDemo
+          ? 'px-3 py-1 rounded-full text-[11px] font-extrabold uppercase bg-amber-500 text-obsidian shadow-lg'
+          : `px-3 py-1 rounded-full text-[11px] font-extrabold uppercase shadow-lg ${stInfo.badgeClass}`;
+      }
+      const catBadge = document.getElementById('saleroomCategoryBadge');
+      if (catBadge) catBadge.textContent = lot.category || 'Gemstones';
+      const timerEl = document.getElementById('saleroomTimer');
+      if (timerEl) {
+        const rem = Number(lot.endsAt || 0) - now;
+        timerEl.textContent = rem > 0 ? formatDurationHHMMSS(rem) : '00:00:00';
+      }
+
+      const sp = lot.specs || {};
+      document.getElementById('saleroomQuickSpecs').innerHTML = `
+        <div><div class="text-[9px] text-ivory-dim uppercase">Weight</div><div class="text-xs font-bold text-ivory">${escapeHtml(sp.caratWeight || 'N/A')}</div></div>
+        <div><div class="text-[9px] text-ivory-dim uppercase">Origin</div><div class="text-xs font-bold text-ivory">${escapeHtml(sp.origin || 'Global')}</div></div>
+        <div><div class="text-[9px] text-ivory-dim uppercase">Clarity</div><div class="text-xs font-bold text-ivory">${escapeHtml(sp.clarity || 'Certified')}</div></div>
+      `;
+
+      const startingBid = Number(lot.startingBid ?? lot.currentBid ?? 0);
+      const currentBid = Number(lot.currentBid ?? startingBid);
+      const minIncrement = Number(lot.minIncrement || 1);
+      const minNext = Number(lot.bidCount || 0) > 0 ? currentBid + minIncrement : startingBid;
+
+      document.getElementById('saleroomStartingBid').textContent = formatPrice(startingBid);
+      document.getElementById('saleroomCurrentBid').textContent = formatPrice(currentBid);
+      document.getElementById('saleroomMinNextBid').textContent = formatPrice(minNext);
+      document.getElementById('saleroomLeaderName').textContent = lot.highestBidderName || 'Opening Bid';
+      document.getElementById('saleroomBidCount').textContent = `${Number(lot.bidCount || 0)} bids`;
+
+      const bidInput = document.getElementById('saleroomBidInput');
+      if (!bidInput.value || Number(bidInput.value) < minNext) {
+        bidInput.min = String(minNext);
+        bidInput.placeholder = `${minNext}`;
+      }
+      document.getElementById('saleroomBidForm').classList.toggle('hidden', !stInfo.isLive);
+      document.getElementById('saleroomEndedBox').classList.toggle('hidden', stInfo.isLive);
+      if (!stInfo.isLive) {
+        const winText = document.getElementById('saleroomWinnerText');
+        const checkoutBtn = document.getElementById('saleroomWinnerCheckoutBtn');
+        if (lot.isDemo) {
+          if (winText) winText.textContent = 'Demo sample lot preview concluded (no real settlement created).';
+          if (checkoutBtn) checkoutBtn.classList.add('hidden');
+        } else if (lot.highestBidderUid && Number(lot.bidCount || 0) > 0) {
+          if (winText) winText.textContent = `Winner: ${lot.highestBidderName || 'Collector'} at ${formatPrice(currentBid)}.`;
+          const isWinner = currentUser && lot.highestBidderUid === currentUser.uid;
+          if (checkoutBtn) checkoutBtn.classList.toggle('hidden', !isWinner);
+        } else {
+          if (winText) winText.textContent = stInfo.isUpcoming ? 'Auction scheduled to open soon.' : 'Auction closed with no bids.';
+          if (checkoutBtn) checkoutBtn.classList.add('hidden');
+        }
+      }
+    }
+
+    window.setSaleroomMediaMode = (mode) => {
+      const img = document.getElementById('saleroomLotImg');
+      const vidStandby = document.getElementById('saleroomVideoStandby');
+      const loupeLens = document.getElementById('macroLoupeLens');
+      if (mode === 'turntable') {
+        img.classList.remove('hidden'); loupeLens.classList.add('hidden'); vidStandby.classList.add('hidden');
+      } else if (mode === 'loupe') {
+        img.classList.remove('hidden'); loupeLens.classList.remove('hidden'); vidStandby.classList.add('hidden');
+        loupeLens.style.backgroundImage = `url('${img.src}')`;
+      } else {
+        img.classList.add('hidden'); loupeLens.classList.add('hidden'); vidStandby.classList.remove('hidden');
+      }
+    };
+
+    window.toggleSaleroomCamera = async () => {
+      const vid = document.getElementById('saleroomLiveVideo');
+      if (webcamStream) { webcamStream.getTracks().forEach(t => t.stop()); webcamStream = null; vid.classList.add('hidden'); return; }
+      try {
+        webcamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        vid.srcObject = webcamStream;
+        vid.classList.remove('hidden');
+        document.getElementById('saleroomVideoStandby').classList.add('hidden');
+      } catch (e) { notify('Camera access unavailable.', 'error'); }
+    };
+
+    window.setQuickBidMultiplier = (mult) => {
+      const lot = auctionsList.find(a => a.id === activeSaleroomId);
+      if (!lot) return;
+      const base = Number(lot.bidCount || 0) > 0 ? Number(lot.currentBid ?? lot.startingBid ?? 0) : Number(lot.startingBid ?? lot.currentBid ?? 0);
+      const inc = Number(lot.minIncrement || 1);
+      document.getElementById('saleroomBidInput').value = String(base + inc * mult);
+    };
+
+    // Atomic Firestore transaction for live bidding with strict validation & post-confirmation toast
+    window.placeLiveBid = async (e) => {
+      e.preventDefault();
+      if (isPlacingBid) return;
+      if (!currentUser || !currentProfile || !activeSaleroomId) {
+        notify('Please sign in to place a bid.', 'error');
+        openAuthModal();
+        return;
+      }
+
+      const bidInput = document.getElementById('saleroomBidInput');
+      const rawValue = (bidInput?.value || '').trim();
+      const amount = Number(rawValue);
+      const lotId = activeSaleroomId;
+      const lot = auctionsList.find(a => a.id === lotId);
+
+      if (!lot) {
+        notify('Auction lot not found.', 'error');
+        return;
+      }
+      if (lot.isDemo) {
+        notify('Demo sample lots do not accept live bids.', 'error');
+        return;
+      }
+      if (lot.sellerUid && lot.sellerUid === currentUser.uid) {
+        notify('You cannot bid on your own auction lot.', 'error');
+        return;
+      }
+
+      const nowCheck = Date.now();
+      const statusCheck = getAuctionStatusInfo(lot, nowCheck);
+      if (!statusCheck.isLive || Number(lot.endsAt || 0) <= nowCheck) {
+        notify('This auction is not currently live for bidding.', 'error');
+        return;
+      }
+
+      if (!rawValue || !Number.isFinite(amount) || amount <= 0) {
+        notify('Please enter a valid positive bid amount.', 'error');
+        return;
+      }
+
+      const clientStartingBid = Number(lot.startingBid ?? lot.currentBid ?? 0);
+      const clientCurrentBid = Number(lot.currentBid ?? clientStartingBid);
+      const clientMinIncrement = Number(lot.minIncrement || 1);
+      const clientMinNext = Number(lot.bidCount || 0) > 0 ? clientCurrentBid + clientMinIncrement : clientStartingBid;
+      if (amount < clientMinNext) {
+        notify(`Minimum next bid is ${formatPrice(clientMinNext)}.`, 'error');
+        return;
+      }
+
+      isPlacingBid = true;
+      const bidBtn = document.getElementById('saleroomPlaceBidBtn');
+      if (bidBtn) bidBtn.disabled = true;
+
+      try {
+        const bidderName = currentProfile.name || currentUser.email || 'Collector';
+        const bidId = `${currentUser.uid}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+        await runTransaction(db, async (tx) => {
+          const ref = auctionDoc(lotId);
+          const snap = await tx.get(ref);
+          if (!snap.exists()) throw new Error('This auction no longer exists.');
+          const data = snap.data();
+          const now = Date.now();
+          const startsAt = Number(data.startsAt || 0);
+          const endsAt = Number(data.endsAt || 0);
+
+          if (data.isDemo) throw new Error('Demo sample lots do not accept live bids.');
+          if (data.sellerUid === currentUser.uid) throw new Error('You cannot bid on your own auction lot.');
+          if (data.status !== 'live' || (startsAt > 0 && startsAt > now) || endsAt <= now) {
+            throw new Error('This auction has ended or is not live.');
+          }
+
+          const startingBid = Number(data.startingBid ?? data.currentBid ?? 0);
+          const currentBid = Number(data.currentBid ?? startingBid);
+          const minIncrement = Number(data.minIncrement || 1);
+          const bidCount = Number(data.bidCount || 0);
+          const minimum = bidCount > 0 ? currentBid + minIncrement : startingBid;
+
+          if (amount < minimum) {
+            throw new Error(`Minimum next bid is ${formatPrice(minimum)}.`);
+          }
+
+          tx.set(doc(bidsCol(lotId), bidId), {
+            bidderUid: currentUser.uid,
+            bidderName,
+            amount,
+            createdAt: now
+          });
+
+          tx.update(ref, {
+            startingBid,
+            currentBid: amount,
+            minIncrement,
+            bidCount: bidCount + 1,
+            highestBidderUid: currentUser.uid,
+            highestBidderName: bidderName,
+            lastBidId: bidId,
+            updatedAt: now
+          });
+        });
+
+        if (bidInput) bidInput.value = '';
+        notify('Your bid was placed successfully.', 'gold');
+      } catch (err) {
+        notify(err.message || 'Unable to place bid.', 'error');
+      } finally {
+        isPlacingBid = false;
+        if (bidBtn) bidBtn.disabled = false;
+      }
+    };
+
+    function subscribeSaleroomSubcollections(lotId) {
+      if (unsubBids) { unsubBids(); unsubBids = null; }
+      if (unsubChat) { unsubChat(); unsubChat = null; }
+      const bidFeed = document.getElementById('saleroomBidFeed');
+      const chatFeed = document.getElementById('saleroomChatFeed');
+
+      unsubBids = onSnapshot(bidsCol(lotId), (snap) => {
+        const rows = snap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        if (bidFeed) {
+          bidFeed.innerHTML = rows.slice(0, 20).map(b => `
+            <div class="flex justify-between items-center gap-2 text-[10px] bg-obsidian/70 border border-gold/10 rounded-lg px-2.5 py-1.5 text-ivory-muted">
+              <span class="truncate">${escapeHtml(b.bidderName || 'Collector')}</span>
+              <strong class="text-gold shrink-0">${formatPrice(b.amount)}</strong>
+            </div>
+          `).join('') || '<p class="text-[10px] text-ivory-dim">No bids yet.</p>';
+        }
+      }, (err) => console.error('Bid listener:', err));
+
+      unsubChat = onSnapshot(messagesCol(lotId), (snap) => {
+        const rows = snap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+        if (chatFeed) {
+          chatFeed.innerHTML = rows.slice(-60).map(m => `
+            <div class="rounded-lg bg-obsidian border border-gold/10 px-2.5 py-2">
+              <strong class="text-gold">${escapeHtml(m.senderName || 'Collector')}</strong>
+              <div class="text-ivory-muted mt-0.5">${escapeHtml(m.text || '')}</div>
+            </div>
+          `).join('') || '<p class="text-[11px] text-ivory-dim">No messages in this saleroom yet.</p>';
+          chatFeed.scrollTop = chatFeed.scrollHeight;
+        }
+      }, (err) => console.error('Chat listener:', err));
+    }
+
+    window.sendSaleroomMessage = async (e) => {
+      e.preventDefault();
+      if (!currentUser || !activeSaleroomId) { notify('Please sign in to chat.', 'error'); openAuthModal(); return; }
+      const input = document.getElementById('saleroomChatInput');
+      const message = (input?.value || '').trim();
+      if (!message) return;
+      try {
+        await addDoc(messagesCol(activeSaleroomId), {
+          senderUid: currentUser.uid,
+          senderName: currentProfile?.name || currentUser.email || 'Collector',
+          text: message.slice(0, 220),
+          createdAt: Date.now()
+        });
+        input.value = '';
+      } catch (err) { notify('Message could not be sent.', 'error'); }
+    };
+
+    window.openProductDetails = (lotId) => { selectedProductId = lotId; navigateTo('product-details'); renderProductDetailsPage(); };
+    function renderProductDetailsPage() {
+      const lot = auctionsList.find(a => a.id === selectedProductId);
+      const root = document.getElementById('productDetailsContent');
+      if (!lot || !root) return;
+      const st = getAuctionStatusInfo(lot);
+      const hasWinner = Number(lot.bidCount || 0) > 0 && Boolean(lot.highestBidderName);
+      root.innerHTML = `
+        <div class="lg:col-span-5 rounded-3xl overflow-hidden bg-obsidian border border-gold/20">
+          <img src="${escapeHtml(lot.imageUrl || '')}" alt="${escapeHtml(lot.title)}" class="w-full aspect-square object-cover">
+        </div>
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${st.badgeClass}">${st.label}</span>
+            <p class="text-[10px] uppercase tracking-widest text-gold">${escapeHtml(lot.category || 'Gemstones')}</p>
+          </div>
+          <h1 class="font-serif text-2xl text-ivory">${escapeHtml(lot.title)}</h1>
+          <p class="text-sm text-ivory-muted">${escapeHtml(lot.description || '')}</p>
+          ${st.isEnded ? `<div class="bg-velvet border border-gold/20 rounded-xl p-3 text-xs text-ivory-muted">${hasWinner ? `Winning Bid by <strong class="text-gold-light">${escapeHtml(lot.highestBidderName)}</strong>` : 'Auction closed without bids.'}</div>` : ''}
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-velvet p-4 rounded-xl"><span class="text-[10px] text-ivory-dim">${st.isEnded ? 'Final bid' : 'Current bid'}</span><div class="text-xl text-gold font-bold">${formatPrice(lot.currentBid)}</div></div>
+            <div class="bg-velvet p-4 rounded-xl"><span class="text-[10px] text-ivory-dim">Starting bid</span><div class="text-xl text-ivory font-bold">${formatPrice(lot.startingBid)}</div></div>
+          </div>
+          <button onclick="openFullSpecsDrawer()" class="px-4 py-3 rounded-xl border border-gold/30 text-gold-light text-xs">View Gemstone Specifications</button>
+        </div>
+      `;
+    }
+    window.openFullSpecsDrawer = () => {
+      const lot = auctionsList.find(a => a.id === activeSaleroomId || a.id === selectedProductId); if (!lot) return;
+      document.getElementById('specsModalTitle').textContent = lot.title;
+      const specs = lot.specs || {};
+      document.getElementById('specsModalBody').innerHTML = Object.entries(specs).map(([k, v]) => `<div class="flex justify-between gap-4 border-b border-gold/10 py-2"><span class="text-ivory-dim capitalize">${escapeHtml(k.replace(/([A-Z])/g, ' $1'))}</span><strong class="text-ivory text-right">${escapeHtml(v)}</strong></div>`).join('') || '<p>No specifications supplied.</p>';
+      document.getElementById('fullSpecsModal').classList.remove('hidden');
+    };
+    window.closeFullSpecsDrawer = () => document.getElementById('fullSpecsModal').classList.add('hidden');
+
+    function validateKycFileObject(file) {
+      if (!file) {
+        return { valid: false, reason: 'Identity document file is required.' };
+      }
+      const lowerName = (file.name || '').toLowerCase();
+      const hasValidExt = ALLOWED_KYC_EXTENSIONS.some(ext => lowerName.endsWith(ext));
+      const hasValidMime = ALLOWED_KYC_MIME_TYPES.includes((file.type || '').toLowerCase());
+      if (!hasValidExt || !hasValidMime) {
+        return { valid: false, reason: 'Identity document must be PDF, JPG, JPEG, or PNG.' };
+      }
+      if (file.size > MAX_KYC_FILE_BYTES) {
+        return { valid: false, reason: 'Identity document must be 5 MB or smaller.' };
+      }
+      return { valid: true };
+    }
+
+    window.handleSellerSingleDocSelect = (e, kind) => {
+      const file = e.target.files[0];
+      const previewEl = kind === 'identity'
+        ? document.getElementById('regIdentityDocPreview')
+        : document.getElementById('regBusinessDocPreview');
+
+      if (!file) {
+        if (kind === 'identity') selectedIdentityDoc = null;
+        else selectedBusinessDoc = null;
+        if (previewEl) previewEl.textContent = STORAGE_UNAVAILABLE_STATUS;
+        return;
+      }
+
+      const fileCheck = validateKycFileObject(file);
+      if (!fileCheck.valid) {
+        e.target.value = '';
+        if (kind === 'identity') selectedIdentityDoc = null;
+        else selectedBusinessDoc = null;
+        if (previewEl) previewEl.textContent = `${fileCheck.reason} (${STORAGE_UNAVAILABLE_STATUS})`;
+        notify(fileCheck.reason, 'error');
+        return;
+      }
+
+      const docRecord = {
+        storageStatus: STORAGE_UNAVAILABLE_STATUS,
+        uploaded: false
+      };
+
+      if (kind === 'identity') {
+        selectedIdentityDoc = docRecord;
+      } else {
+        selectedBusinessDoc = docRecord;
+      }
+
+      if (previewEl) {
+        previewEl.textContent = `Validated (${(file.size / (1024 * 1024)).toFixed(2)} MB) — ${STORAGE_UNAVAILABLE_STATUS}`;
+      }
+    };
+
+    function showSellerValidationErrors(errors) {
+      const box = document.getElementById('sellerFormValidationBox');
+      const list = document.getElementById('sellerFormValidationList');
+      if (!box || !list) return;
+      if (!errors || errors.length === 0) {
+        box.classList.add('hidden');
+        list.innerHTML = '';
+        return;
+      }
+      list.innerHTML = errors.map(err => `<li>${escapeHtml(err)}</li>`).join('');
+      box.classList.remove('hidden');
+    }
+
+    function formatDurationHHMMSS(msRemaining) {
+      const totalSec = Math.max(0, Math.floor(msRemaining / 1000));
+      const hrs = String(Math.floor(totalSec / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+      const secs = String(totalSec % 60).padStart(2, '0');
+      return `${hrs}:${mins}:${secs}`;
+    }
+
+    async function finalizeAuctionIfEnded(lotId) {
+      if (!currentUser || !isAdminUser || !lotId || finalizedLotIds.has(lotId)) return;
+      try {
+        const claim = await currentUser.getIdTokenResult(true);
+        if (claim.claims.admin !== true) { isAdminUser = false; return; }
+      } catch (_) { isAdminUser = false; return; }
+      const lot = auctionsList.find(a => a.id === lotId);
+      if (!lot) return;
+      if (lot.status === 'ended' || Number(lot.endsAt) > Date.now()) return;
+
+      finalizedLotIds.add(lotId);
+      try {
+        await runTransaction(db, async (tx) => {
+          const ref = auctionDoc(lotId);
+          const snap = await tx.get(ref);
+          if (!snap.exists()) return;
+          const data = snap.data();
+          const now = Date.now();
+          if (data.status === 'ended' || Number(data.endsAt) > now) return;
+
+          const hasBids = Number(data.bidCount || 0) > 0 && Boolean(data.highestBidderUid);
+          const shouldCreateOrder = hasBids && !data.isDemo && !data.orderCreated;
+
+          if (shouldCreateOrder) {
+            const finalPrice = Number(data.currentBid || data.startingBid || 0);
+            const commissionRate = 0.10;
+            const commissionAmount = Number((finalPrice * commissionRate).toFixed(2));
+            const sellerNetAmount = Number((finalPrice - commissionAmount).toFixed(2));
+            const orderRef = doc(db, 'artifacts', appId, 'public', 'data', 'orders', `order_${lotId}`);
+
+            tx.set(orderRef, {
+              lotId,
+              lotCode: data.lotCode || lotId,
+              lotTitle: data.title || 'Auction Lot',
+              category: data.category || 'Gemstones',
+              imageUrl: data.imageUrl || '',
+              buyerUid: data.highestBidderUid,
+              buyerName: data.highestBidderName || 'Winning Collector',
+              sellerUid: data.sellerUid || '',
+              sellerName: data.sellerName || 'Verified Seller',
+              finalPrice,
+              commissionRate,
+              commissionAmount,
+              sellerNetAmount,
+              status: 'pending_demo_payment',
+              shippingStage: 'Awaiting Simulated Demo Checkout (No Real Charge)',
+              createdAt: now
+            });
+          }
+
+          tx.update(ref, {
+            status: 'ended',
+            endedAt: data.endedAt || now,
+            orderCreated: shouldCreateOrder ? true : Boolean(data.orderCreated)
+          });
+        });
+      } catch (err) {
+        finalizedLotIds.delete(lotId);
+        console.error('Auction finalization error:', err);
+      }
+    }
+
+    function startSaleroomCountdown() {
+      if (saleroomCountdownInterval) {
+        clearInterval(saleroomCountdownInterval);
+        saleroomCountdownInterval = null;
+      }
+      saleroomCountdownInterval = setInterval(() => {
+        const now = Date.now();
+        const timerEl = document.getElementById('saleroomTimer');
+        const activeLot = auctionsList.find(a => a.id === activeSaleroomId);
+        if (timerEl && activeLot) {
+          const remaining = Number(activeLot.endsAt || 0) - now;
+          timerEl.textContent = remaining > 0 ? formatDurationHHMMSS(remaining) : '00:00:00';
+        }
+        auctionsList.forEach(lot => {
+          if (lot.status === 'live' && Number(lot.endsAt || 0) <= now) {
+            finalizeAuctionIfEnded(lot.id);
+          }
+        });
+      }, 1000);
+    }
+
+    window.submitWorldwideSellerForm = async (e) => {
+      if (e && typeof e.preventDefault === 'function') {
+        e.preventDefault();
+      }
+
+      if (isSubmittingSellerApp) {
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitSellerAppBtn');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i><span>Submit Application</span>';
+
+      if (!currentUser) {
+        showSellerValidationErrors(['Please sign in with your account before submitting a seller application.']);
+        notify('Please sign in to submit a seller application.', 'error');
+        openAuthModal();
+        return;
+      }
+
+      const fullName = (document.getElementById('regFullName')?.value || '').trim();
+      const storeName = (document.getElementById('regStoreName')?.value || '').trim();
+      const email = (document.getElementById('regEmail')?.value || '').trim();
+      const countryCode = (document.getElementById('regCountryCode')?.value || '').trim();
+      const mobileNumber = (document.getElementById('regMobileNumber')?.value || '').trim();
+      const country = (document.getElementById('regCountry')?.value || '').trim();
+      const businessAddress = (document.getElementById('regBusinessAddress')?.value || '').trim();
+      const sellerType = document.querySelector('input[name="regSellerType"]:checked')?.value || '';
+      const specialties = (document.getElementById('regSpecialties')?.value || '').trim();
+      const attested = Boolean(document.getElementById('regAttestationCheck')?.checked);
+      const identityFileInput = document.getElementById('regIdentityDocInput');
+      const rawIdentityFile = identityFileInput && identityFileInput.files ? identityFileInput.files[0] : null;
+
+      const validationErrors = [];
+      if (!fullName) validationErrors.push('1. Full Name is required.');
+      if (!storeName) validationErrors.push('2. Store / Business Name is required.');
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) validationErrors.push('3. A valid Email Address is required.');
+      if (!countryCode || !mobileNumber) validationErrors.push('4. Country code and Mobile Number are required.');
+      if (!country) validationErrors.push('5. Country is required.');
+      if (!businessAddress) validationErrors.push('6. Full Business Address is required.');
+      if (!sellerType) validationErrors.push('7. Seller Type is required.');
+      if (!specialties) validationErrors.push('8. Primary Gem & Jewellery Specialties are required.');
+
+      if (!rawIdentityFile && !selectedIdentityDoc) {
+        validationErrors.push('9. Identity Document file is required (PDF, JPG, JPEG, or PNG, max 5 MB).');
+      } else if (rawIdentityFile) {
+        const idCheck = validateKycFileObject(rawIdentityFile);
+        if (!idCheck.valid) {
+          validationErrors.push(`9. ${idCheck.reason}`);
+        } else if (!selectedIdentityDoc) {
+          selectedIdentityDoc = {
+            storageStatus: STORAGE_UNAVAILABLE_STATUS,
+            uploaded: false
+          };
+        }
+      }
+
+      if (!attested) {
+        validationErrors.push('Please confirm that all information is genuine and acknowledge the 10% platform commission fee.');
+      }
+
+      if (validationErrors.length > 0) {
+        showSellerValidationErrors(validationErrors);
+        notify(validationErrors[0], 'error');
+        return;
+      }
+
+      showSellerValidationErrors([]);
+      isSubmittingSellerApp = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Submitting Application...</span>';
+      }
+
+      try {
+        const applicationPayload = {
+          uid: currentUser.uid,
+          fullName,
+          storeName,
+          email,
+          countryCode,
+          mobileNumber,
+          country,
+          businessAddress,
+          sellerType,
+          specialties,
+          identityDocumentStatus: {
+            uploaded: false,
+            storageStatus: STORAGE_UNAVAILABLE_STATUS
+          },
+          businessDocumentStatus: selectedBusinessDoc ? {
+            uploaded: false,
+            storageStatus: STORAGE_UNAVAILABLE_STATUS
+          } : null,
+          status: 'PENDING',
+          createdAt: Date.now()
+        };
+
+        await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'sellerApplications', currentUser.uid), applicationPayload);
+        await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'users', currentUser.uid), {
+          sellerStatus: 'PENDING'
+        }, { merge: true });
+
+        const existingIdx = applicationsList.findIndex(item => item.uid === currentUser.uid);
+        if (existingIdx >= 0) {
+          applicationsList[existingIdx] = { id: currentUser.uid, ...applicationPayload };
+        } else {
+          applicationsList.unshift({ id: currentUser.uid, ...applicationPayload });
+        }
+        if (currentProfile) {
+          currentProfile.sellerStatus = 'PENDING';
+        }
+
+        renderSellerRegistrationPage();
+        renderSellerDashboardPage();
+        syncIdentityUI();
+        notify('Your application details have been saved successfully. Your identity and business documents have NOT been uploaded because cloud storage is not enabled. Your application is pending manual review.', 'gold');
+      } catch (err) {
+        const errorMessage = err?.message || 'Unable to submit seller application. Please try again.';
+        showSellerValidationErrors([`Submission Error: ${errorMessage}`]);
+        notify(`Submission failed: ${errorMessage}`, 'error');
+      } finally {
+        isSubmittingSellerApp = false;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      }
+    };
+
+    function renderSellerRegistrationPage() {
+      const existingApp = currentUser ? applicationsList.find(a => a.uid === currentUser.uid) : null;
+      document.getElementById('sellerAppStatusBanner').classList.toggle('hidden', !existingApp);
+      document.getElementById('worldwideSellerForm').classList.toggle('hidden', Boolean(existingApp));
+
+      if (existingApp) {
+        const appStatus = (existingApp.status || 'PENDING').toUpperCase();
+        const refEl = document.getElementById('sellerAppRefId');
+        if (refEl) {
+          refEl.textContent = `APP REF: #MG-SELLER (${existingApp.uid || currentUser.uid})`;
+        }
+        const badgeEl = document.getElementById('sellerAppStatusBadge');
+        if (badgeEl) {
+          badgeEl.textContent = `STATUS: ${appStatus}`;
+          badgeEl.className = appStatus === 'APPROVED'
+            ? 'self-start sm:self-center px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-400/40'
+            : appStatus === 'REJECTED'
+            ? 'self-start sm:self-center px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase bg-red-500/20 text-red-300 border border-red-400/40'
+            : 'self-start sm:self-center px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase bg-amber-500/20 text-amber-300 border border-amber-400/40';
+        }
+        const idTextEl = document.getElementById('sellerAppIdentityText');
+        if (idTextEl) {
+          idTextEl.textContent = appStatus === 'APPROVED'
+            ? 'Approved by Admin (Documents Not Stored in Cloud Storage)'
+            : appStatus === 'REJECTED'
+            ? 'Application Declined'
+            : 'Unverified — Pending Manual Review';
+        }
+        const idDocEl = document.getElementById('sellerAppIdentityDocStatus');
+        if (idDocEl) {
+          idDocEl.textContent = 'NOT stored in cloud storage — cannot yet be reviewed by admin';
+        }
+        const bizDocEl = document.getElementById('sellerAppBusinessDocStatus');
+        if (bizDocEl) {
+          bizDocEl.textContent = existingApp.businessDocumentStatus
+            ? 'NOT stored in cloud storage — cannot yet be reviewed by admin'
+            : 'No business document attached — NOT stored in cloud storage';
+        }
+      }
+    }
+
+    window.uploadNewAuctionLot = async (e) => {
+      e.preventDefault();
+      if (!currentUser || !currentProfile) { notify('Please sign in first.', 'error'); openAuthModal(); return; }
+      if ((currentProfile.sellerStatus || '').toUpperCase() !== 'APPROVED') { notify('Only approved sellers can publish auction lots.', 'error'); return; }
+      const title = document.getElementById('upLotTitle').value.trim();
+      const category = document.getElementById('upLotCategory').value;
+      const startingBid = parseFloat(document.getElementById('upLotStartBid').value);
+      const minIncrement = parseFloat(document.getElementById('upLotIncrement').value) || 25;
+      const durationMins = Number(document.getElementById('upLotDuration')?.value || 10);
+      if (!title || !Number.isFinite(startingBid) || startingBid <= 0 || !Number.isFinite(minIncrement) || minIncrement <= 0 || ![10, 30].includes(durationMins)) {
+        notify('Enter a title, positive starting bid, positive increment, and valid duration.', 'error'); return;
+      }
+      const imageUrl = document.getElementById('upLotImageUrl').value.trim() || 'https://placehold.co/800x600/121212/D4AF37?text=Mughal+Gems';
+      const description = document.getElementById('upLotDesc').value.trim();
+
+      const now = Date.now();
+      await addDoc(auctionsCol(), {
+        lotCode: `MG-${Math.floor(100 + Math.random() * 899)}`,
+        isDemo: false,
+        title,
+        category,
+        imageUrl,
+        startingBid,
+        currentBid: startingBid,
+        minIncrement,
+        bidCount: 0,
+        highestBidderUid: null,
+        highestBidderName: null,
+        sellerUid: currentUser.uid,
+        sellerName: currentProfile.name,
+        sellerCountry: currentProfile.country || 'Global',
+        status: 'live',
+        orderCreated: false,
+        specs: {
+          gemstoneType: document.getElementById('upSpecType')?.value.trim() || category,
+          caratWeight: document.getElementById('upSpecCarat')?.value.trim() || 'Certified',
+          cut: document.getElementById('upSpecCut')?.value.trim() || 'Standard',
+          clarity: document.getElementById('upSpecClarity')?.value.trim() || 'Certified',
+          origin: document.getElementById('upSpecOrigin')?.value.trim() || (currentProfile.country || 'Global'),
+          certification: document.getElementById('upSpecCert')?.value.trim() || 'Verified'
+        },
+        description,
+        createdAt: now,
+        endsAt: now + durationMins * 60 * 1000
+      });
+      document.getElementById('sellerUploadLotForm').reset();
+      notify('New live lot published!', 'gold');
+    };
+
+    function renderSellerDashboardPage() {
+      const statusPill = document.getElementById('sellerDashboardStatusPill');
+      if (!currentUser || !currentProfile) {
+        if (statusPill) statusPill.textContent = 'Sign In Required';
+        document.getElementById('sellerUnapprovedGate').classList.remove('hidden');
+        document.getElementById('sellerApprovedWorkspace').classList.add('hidden');
+        return;
+      }
+      const sellerStatus = (currentProfile.sellerStatus || 'NONE').toUpperCase();
+      const isApproved = sellerStatus === 'APPROVED';
+      if (statusPill) {
+        statusPill.textContent = isApproved ? 'Verified Worldwide Seller' : `Status: ${sellerStatus}`;
+      }
+      const gateBadge = document.getElementById('sellerGateStatusBadge');
+      if (gateBadge) gateBadge.textContent = `SELLER STATUS: ${sellerStatus}`;
+
+      document.getElementById('sellerUnapprovedGate').classList.toggle('hidden', isApproved);
+      document.getElementById('sellerApprovedWorkspace').classList.toggle('hidden', !isApproved);
+      if (!isApproved) return;
+
+      const mySales = sellerOrdersList.filter(o => o.sellerUid === currentUser.uid);
+      const gross = mySales.reduce((s, o) => s + (Number(o.finalPrice) || 0), 0);
+      const fee = mySales.reduce((s, o) => s + (Number(o.commissionAmount ?? (Number(o.finalPrice || 0) * 0.10)) || 0), 0);
+      const net = mySales.reduce((s, o) => {
+        const fPrice = Number(o.finalPrice) || 0;
+        const fFee = Number(o.commissionAmount ?? (fPrice * 0.10)) || 0;
+        return s + (Number(o.sellerNetAmount ?? (fPrice - fFee)) || 0);
+      }, 0);
+
+      document.getElementById('sellerGrossSales').textContent = formatPrice(gross);
+      document.getElementById('sellerPlatformFees').textContent = '-' + formatPrice(fee);
+      document.getElementById('sellerNetPayout').textContent = formatPrice(net);
+
+      const myLots = auctionsList.filter(a => a.sellerUid === currentUser.uid);
+      const lotsBadge = document.getElementById('sellerLotsCountBadge');
+      if (lotsBadge) lotsBadge.textContent = `${myLots.length} ${myLots.length === 1 ? 'Lot' : 'Lots'}`;
+
+      document.getElementById('sellerMyLotsContainer').innerHTML = myLots.map(lot => {
+        const st = getAuctionStatusInfo(lot);
+        const hasWinner = Number(lot.bidCount || 0) > 0 && Boolean(lot.highestBidderName);
+        return `
+          <div class="bg-obsidian border border-gold/20 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div class="min-w-0 space-y-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${st.badgeClass}">${st.label}</span>
+                <span class="font-mono text-[10px] text-ivory-dim">#${escapeHtml(lot.lotCode || lot.id)}</span>
+              </div>
+              <div class="font-bold text-ivory truncate">${escapeHtml(lot.title)}</div>
+              <div class="text-[11px] text-ivory-dim">
+                ${st.isEnded ? 'Final Bid' : 'Current Bid'}: <strong class="text-gold">${formatPrice(lot.currentBid)}</strong> • ${Number(lot.bidCount || 0)} bids
+              </div>
+              ${st.isEnded ? `<div class="text-[11px] text-ivory-muted">${hasWinner ? `Winner: <strong class="text-gold-light">${escapeHtml(lot.highestBidderName)}</strong>` : 'Closed with no bids'}</div>` : ''}
+            </div>
+            <button onclick="enterSaleroomForLot('${lot.id}')" class="touch-target shrink-0 px-3.5 py-2 bg-velvet border border-gold/30 hover:border-gold rounded-xl text-gold-light font-bold">
+              ${st.isLive ? 'Open Saleroom' : 'View Result'}
+            </button>
+          </div>
+        `;
+      }).join('') || `
+        <div class="bg-obsidian/70 border border-gold/15 rounded-2xl p-5 text-center space-y-1">
+          <p class="text-xs font-semibold text-ivory-muted">No auction lots listed yet</p>
+          <p class="text-[11px] text-ivory-dim">Publish your first gemstone or jewellery lot using the form.</p>
+        </div>
+      `;
+
+      const sellerOrdersPill = document.getElementById('sellerOrdersCountPill');
+      if (sellerOrdersPill) sellerOrdersPill.textContent = `${mySales.length} ${mySales.length === 1 ? 'Order' : 'Orders'}`;
+
+      const sellerOrdersEl = document.getElementById('sellerOrdersContainer');
+      if (sellerOrdersEl) {
+        sellerOrdersEl.innerHTML = mySales.map(ord => {
+          const finalPrice = Number(ord.finalPrice || 0);
+          const commission = Number(ord.commissionAmount ?? (finalPrice * 0.10));
+          const netAmount = Number(ord.sellerNetAmount ?? (finalPrice - commission));
+          const isDemoSettled = ord.status === 'paid_demo';
+          const statusLabel = isDemoSettled ? 'Simulated Demo Checkout (No Real Charge)' : 'Awaiting Settlement';
+          const statusCls = isDemoSettled
+            ? 'bg-sky-500/20 text-sky-300 border border-sky-400/40'
+            : 'bg-amber-500/20 text-amber-300 border border-amber-400/40';
+          return `
+            <article class="bg-obsidian border border-gold/25 rounded-2xl p-4 space-y-3 text-xs">
+              <div class="flex items-start gap-3">
+                <img src="${escapeHtml(ord.imageUrl || 'https://placehold.co/160x160/121212/D4AF37?text=Lot')}" alt="${escapeHtml(ord.lotTitle)}" class="w-16 h-16 rounded-xl object-cover border border-gold/25 shrink-0" />
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div class="flex items-center justify-between gap-2 flex-wrap">
+                    <span class="font-mono text-[10px] text-gold-light">ORDER #${escapeHtml((ord.lotCode || ord.id).toUpperCase())}</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${statusCls}">${statusLabel}</span>
+                  </div>
+                  <h3 class="font-serif text-sm font-bold text-ivory line-clamp-2">${escapeHtml(ord.lotTitle)}</h3>
+                  <div class="text-[11px] text-ivory-muted">
+                    Buyer: <strong class="text-ivory">${escapeHtml(ord.buyerName || 'Winning Collector')}</strong>
+                    <span class="font-mono text-[10px] text-ivory-dim ml-1">(${escapeHtml((ord.buyerUid || '').slice(0, 8))}…)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-velvet/90 border border-gold/15 rounded-xl p-3 space-y-1.5">
+                <div class="flex justify-between"><span class="text-ivory-dim">Final Sale Price:</span><strong class="text-ivory">${formatPrice(finalPrice)}</strong></div>
+                <div class="flex justify-between"><span class="text-ivory-dim">Platform Commission (10%):</span><span class="text-amber-300 font-semibold">-${formatPrice(commission)}</span></div>
+                <div class="flex justify-between border-t border-gold/15 pt-1.5"><span class="text-gold-light font-bold">Seller Net Amount (90%):</span><strong class="font-royal text-sm text-gold">${formatPrice(netAmount)}</strong></div>
+              </div>
+              <div class="text-[10px] text-amber-300/90 flex items-center justify-between gap-2">
+                <span>Payout Status: Manual / Not Yet Disbursed</span>
+                <span>${ord.createdAt ? new Date(ord.createdAt).toLocaleDateString() : ''}</span>
+              </div>
+            </article>
+          `;
+        }).join('') || `
+          <div class="col-span-full bg-obsidian/70 border border-gold/15 rounded-2xl p-6 text-center space-y-1.5">
+            <i class="fa-solid fa-box-open text-gold/70 text-lg"></i>
+            <p class="text-xs font-semibold text-ivory-muted">No seller orders yet</p>
+            <p class="text-[11px] text-ivory-dim">When one of your live auction lots ends with a winning bid, the order and 10% commission breakdown will appear here. Payout Status: Manual / Not Yet Disbursed.</p>
+          </div>
+        `;
+      }
+    }
+
+    function checkWinnerAlerts() {
+      if (!currentUser) return;
+      const myPending = buyerOrdersList.filter(o => o.buyerUid === currentUser.uid && o.status === 'pending_demo_payment');
+      if (myPending.length > 0 && !alertedOrderIds.has(myPending[0].id)) {
+        alertedOrderIds.add(myPending[0].id);
+        document.getElementById('winnerBannerMsg').textContent = `You won "${myPending[0].lotTitle}"!`;
+        document.getElementById('winnerToastBanner').classList.remove('hidden');
+      }
+    }
+
+    function renderBuyerProfilePage() {
+      const ordersPill = document.getElementById('buyerOrdersCountPill');
+      const ordersContainer = document.getElementById('buyerOrdersContainer');
+      const endedContainer = document.getElementById('buyerEndedResultsContainer');
+      const leadingContainer = document.getElementById('buyerLeadingLotsContainer');
+
+      if (!currentUser) {
+        if (ordersPill) ordersPill.textContent = '0 Orders';
+        if (ordersContainer) ordersContainer.innerHTML = `<div class="col-span-full bg-velvet rounded-2xl p-6 border border-gold/20 text-center text-xs text-ivory-muted">Sign in to view your personal auction orders and won lots.</div>`;
+        if (endedContainer) endedContainer.innerHTML = `<div class="col-span-full bg-velvet rounded-2xl p-6 border border-gold/20 text-center text-xs text-ivory-dim">Sign in to view ended auction results.</div>`;
+        if (leadingContainer) leadingContainer.innerHTML = `<p class="text-xs text-ivory-dim italic">Sign in to view your active bids.</p>`;
+        return;
+      }
+
+      const myOrders = buyerOrdersList.filter(o => o.buyerUid === currentUser.uid);
+      if (ordersPill) ordersPill.textContent = `${myOrders.length} ${myOrders.length === 1 ? 'Order' : 'Orders'}`;
+
+      if (ordersContainer) {
+        ordersContainer.innerHTML = myOrders.map(ord => {
+          const finalPrice = Number(ord.finalPrice || 0);
+          const commission = Number(ord.commissionAmount ?? (finalPrice * 0.10));
+          const isDemoSettled = ord.status === 'paid_demo';
+          const statusLabel = isDemoSettled ? 'Simulated Demo Checkout (No Real Charge)' : 'Awaiting Settlement';
+          const statusCls = isDemoSettled
+            ? 'bg-sky-500/20 text-sky-300 border border-sky-400/40'
+            : 'bg-amber-500/20 text-amber-300 border border-amber-400/40';
+          return `
+            <article class="bg-velvet rounded-2xl p-4 border border-gold/25 space-y-3 text-xs">
+              <div class="flex items-start gap-3.5">
+                <img src="${escapeHtml(ord.imageUrl || 'https://placehold.co/160x160/121212/D4AF37?text=Lot')}" alt="${escapeHtml(ord.lotTitle)}" class="w-20 h-20 rounded-xl object-cover border border-gold/30 shrink-0" />
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div class="flex items-center justify-between gap-2 flex-wrap">
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">Sold • Won</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${statusCls}">${statusLabel}</span>
+                  </div>
+                  <h3 class="font-serif text-sm sm:text-base font-bold text-ivory line-clamp-2">${escapeHtml(ord.lotTitle)}</h3>
+                  <div class="text-[11px] text-ivory-muted">
+                    Seller: <strong class="text-ivory">${escapeHtml(ord.sellerName || 'Verified Seller')}</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-obsidian/85 border border-gold/15 rounded-xl p-3 space-y-1.5">
+                <div class="flex justify-between"><span class="text-ivory-dim">Final Winning Bid:</span><strong class="font-royal text-sm text-gold">${formatPrice(finalPrice)}</strong></div>
+                <div class="flex justify-between"><span class="text-ivory-dim">Included Marketplace Commission (10%):</span><span class="text-gold-light">${formatPrice(commission)}</span></div>
+                <div class="flex justify-between"><span class="text-ivory-dim">Order Status:</span><span class="text-ivory font-semibold">${escapeHtml(ord.shippingStage || statusLabel)}</span></div>
+              </div>
+              ${isDemoSettled ? `
+                <div class="bg-obsidian border border-sky-400/30 rounded-xl px-3 py-2 text-[11px] text-sky-300">
+                  <i class="fa-solid fa-circle-info mr-1"></i> Simulated Demo Checkout (No Real Charge): Recorded for preview only.
+                </div>
+              ` : `
+                <button onclick="openDemoCheckoutModal('${ord.id}')" class="gold-btn w-full py-2.5 rounded-xl text-xs uppercase">Simulated Demo Checkout (No Real Charge)</button>
+              `}
+            </article>
+          `;
+        }).join('') || `
+          <div class="col-span-full bg-velvet rounded-2xl p-6 border border-gold/20 text-center space-y-1.5">
+            <i class="fa-solid fa-bag-shopping text-gold/70 text-lg"></i>
+            <p class="text-xs font-semibold text-ivory-muted">You have no orders yet</p>
+            <p class="text-[11px] text-ivory-dim">When you win a live auction lot, your order details, seller information, and settlement status will appear here.</p>
+          </div>
+        `;
+      }
+
+      const endedLots = auctionsList.filter(lot => getAuctionStatusInfo(lot).isEnded);
+      if (endedContainer) {
+        endedContainer.innerHTML = endedLots.map(lot => {
+          const st = getAuctionStatusInfo(lot);
+          const hasWinner = Number(lot.bidCount || 0) > 0 && Boolean(lot.highestBidderName);
+          const isMeWinner = hasWinner && lot.highestBidderUid === currentUser.uid;
+          return `
+            <article class="bg-velvet rounded-2xl overflow-hidden border border-gold/20 flex flex-col">
+              <div class="relative aspect-[16/10] bg-obsidian">
+                <img src="${escapeHtml(lot.imageUrl)}" alt="${escapeHtml(lot.title)}" class="w-full h-full object-cover" />
+                <div class="absolute top-2.5 left-2.5 flex gap-1.5">
+                  ${lot.isDemo ? '<span class="px-2 py-0.5 rounded-full bg-amber-500 text-obsidian text-[10px] font-extrabold uppercase">DEMO</span>' : ''}
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${st.badgeClass}">${st.label}</span>
+                </div>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between space-y-2.5 text-xs">
+                <div>
+                  <div class="text-[10px] uppercase text-gold-light">${escapeHtml(lot.category)}</div>
+                  <h3 class="font-serif text-sm font-bold text-ivory line-clamp-2 mt-0.5">${escapeHtml(lot.title)}</h3>
+                </div>
+                <div class="bg-obsidian/80 border border-gold/15 rounded-xl p-2.5 space-y-1">
+                  <div class="flex justify-between"><span class="text-ivory-dim">Final Bid:</span><strong class="text-gold">${formatPrice(lot.currentBid)}</strong></div>
+                  <div class="flex justify-between gap-2">
+                    <span class="text-ivory-dim shrink-0">Winner:</span>
+                    <strong class="truncate ${isMeWinner ? 'text-emerald-300' : 'text-ivory'}">${hasWinner ? `${escapeHtml(lot.highestBidderName)}${isMeWinner ? ' (You)' : ''}` : 'No Bids'}</strong>
+                  </div>
+                </div>
+                <button onclick="enterSaleroomForLot('${lot.id}')" class="w-full py-2 rounded-xl bg-obsidian border border-gold/30 hover:border-gold text-gold-light font-bold">View Saleroom Result</button>
+              </div>
+            </article>
+          `;
+        }).join('') || `<div class="col-span-full bg-velvet rounded-2xl p-6 border border-gold/20 text-center text-xs text-ivory-dim">No ended auctions yet.</div>`;
+      }
+
+      const leading = auctionsList.filter(a => a.highestBidderUid === currentUser.uid && getAuctionStatusInfo(a).isLive);
+      if (leadingContainer) {
+        leadingContainer.innerHTML = leading.map(lot => renderLotCardHtml(lot)).join('') || `<p class="text-xs text-ivory-dim italic">Not leading any active bids.</p>`;
+      }
+    }
+
+    window.openDemoCheckoutModal = (orderId) => {
+      const ord = buyerOrdersList.find(o => o.id === orderId) || ordersList.find(o => o.id === orderId);
+      if (!ord) return;
+      activeCheckoutOrderId = orderId;
+      document.getElementById('demoCheckoutSubtitle').textContent = ord.lotTitle;
+      document.getElementById('demoCheckoutTotal').textContent = formatPrice(ord.finalPrice);
+      document.getElementById('demoCheckoutFee').textContent = formatPrice(ord.commissionAmount);
+      document.getElementById('demoCheckoutModal').classList.remove('hidden');
+    };
+
+    window.processDemoOrderPayment = async () => {
+      if (!activeCheckoutOrderId || !currentUser) return;
+      try {
+        const orderRef = doc(db, 'artifacts', appId, 'public', 'data', 'orders', activeCheckoutOrderId);
+        const orderSnap = await getDoc(orderRef);
+        if (!orderSnap.exists()) throw new Error('Order not found.');
+        const order = orderSnap.data();
+        if (order.buyerUid !== currentUser.uid) throw new Error('You can only update your own buyer order.');
+        if (order.status !== 'pending_demo_payment') throw new Error('This order is not awaiting demo checkout.');
+        await updateDoc(orderRef, {
+          status: 'paid_demo',
+          shippingStage: 'Simulated Demo Checkout (No Real Charge)',
+          paidAt: Date.now()
+        });
+        document.getElementById('demoCheckoutModal').classList.add('hidden');
+        notify('Simulated demo checkout status recorded. No money was charged.', 'gold');
+      } catch (err) { notify(err.message || 'Demo checkout could not be recorded.', 'error'); }
+    };
+
+    window.setAdminAppFilter = (filterVal) => {
+      adminAppFilter = filterVal;
+      renderAdminDashboardPage();
+    };
+
+    // STRICT RENDER ADMIN DASHBOARD WITH SERVER-SIDE CUSTOM CLAIM CHECK ONLY
+    async function renderAdminDashboardPage() {
+      const deniedBox = document.getElementById('adminAccessDeniedBox');
+      const authContent = document.getElementById('adminAuthorizedContent');
+
+      if (!currentUser) {
+        deniedBox.classList.remove('hidden');
+        authContent.classList.add('hidden');
+        return;
+      }
+
+      try {
+        const idTokenResult = await currentUser.getIdTokenResult(true);
+        if (idTokenResult.claims.admin !== true) {
+          deniedBox.classList.remove('hidden');
+          authContent.classList.add('hidden');
+          return;
+        }
+
+        deniedBox.classList.add('hidden');
+        authContent.classList.remove('hidden');
+
+        document.getElementById('adminMetricLots').textContent = auctionsList.length;
+        document.getElementById('adminMetricSellers').textContent = usersList.filter(u => (u.sellerStatus || '').toUpperCase() === 'APPROVED').length;
+        document.getElementById('adminMetricGmv').textContent = formatPrice(ordersList.reduce((s, o) => s + (Number(o.finalPrice) || 0), 0));
+        document.getElementById('adminMetricCommission').textContent = formatPrice(ordersList.reduce((s, o) => s + (Number(o.commissionAmount ?? (Number(o.finalPrice || 0) * 0.10)) || 0), 0));
+
+        const filteredApps = applicationsList.filter(app => adminAppFilter === 'ALL' || (app.status || 'PENDING').toUpperCase() === adminAppFilter);
+        document.getElementById('adminApplicationsList').innerHTML = filteredApps.map(app => `
+          <div class="bg-obsidian border border-gold/25 rounded-2xl p-4 space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <div><strong class="text-ivory">${escapeHtml(app.storeName)}</strong> (${escapeHtml(app.fullName)})</div>
+              <span class="px-2 py-0.5 bg-amber-500/20 text-amber-300 rounded text-[10px] font-bold">${escapeHtml(app.status)}</span>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="adminDecideApplication('${app.uid}', 'APPROVED')" class="flex-1 py-1.5 bg-emerald-600 rounded-lg text-white text-xs font-bold">Approve</button>
+              <button onclick="adminDecideApplication('${app.uid}', 'REJECTED')" class="flex-1 py-1.5 bg-red-600/30 text-red-300 rounded-lg text-xs font-bold">Reject</button>
+            </div>
+          </div>
+        `).join('') || `<p class="text-xs text-ivory-dim italic">No applications.</p>`;
+
+        document.getElementById('adminAuctionsModList').innerHTML = auctionsList.map(lot => {
+          const st = getAuctionStatusInfo(lot);
+          return `
+            <div class="bg-obsidian border border-gold/15 rounded-xl p-3 flex justify-between items-center gap-2 text-xs">
+              <div class="truncate text-ivory font-bold">${escapeHtml(lot.title)} <span class="text-[10px] font-normal text-gold-light">[${st.label}]</span></div>
+              <button onclick="adminEndAuctionNow('${lot.id}')" class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-[10px] shrink-0">End</button>
+            </div>
+          `;
+        }).join('');
+
+        document.getElementById('adminOrdersList').innerHTML = ordersList.map(o => `
+          <div class="bg-obsidian border border-gold/15 rounded-xl p-3 flex justify-between items-center text-xs">
+            <div class="truncate text-ivory">${escapeHtml(o.lotTitle)}</div>
+            <div class="text-gold font-bold shrink-0">10%: ${formatPrice(o.commissionAmount ?? (Number(o.finalPrice || 0) * 0.10))}</div>
+          </div>
+        `).join('');
+      } catch (e) {
+        deniedBox.classList.remove('hidden');
+        authContent.classList.add('hidden');
+      }
+    }
+
+    async function requireVerifiedAdmin() {
+      if (!auth.currentUser) throw new Error('Please sign in as an administrator.');
+      const token = await auth.currentUser.getIdTokenResult(true);
+      if (token.claims.admin !== true) { isAdminUser = false; throw new Error('Administrator access denied.'); }
+      isAdminUser = true;
+    }
+
+    window.adminDecideApplication = async (uid, decision) => {
+      try {
+        await requireVerifiedAdmin();
+        if (!['APPROVED', 'REJECTED', 'PENDING'].includes(decision)) throw new Error('Invalid application decision.');
+        await updateDoc(doc(db, 'artifacts', appId, 'public', 'data', 'sellerApplications', uid), { status: decision, reviewedAt: Date.now(), reviewedBy: currentUser.uid });
+        await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'users', uid), { sellerStatus: decision }, { merge: true });
+        notify(`Application status updated to ${decision}.`, 'gold');
+      } catch (err) { notify(err.message || 'Admin action failed.', 'error'); }
+    };
+
+    window.adminEndAuctionNow = async (lotId) => {
+      try {
+        await requireVerifiedAdmin();
+        const ref = auctionDoc(lotId);
+        await updateDoc(ref, { endsAt: Date.now() - 1000 });
+        await finalizeAuctionIfEnded(lotId);
+        notify('Auction end requested. Winner/order creation depends on Firestore rules and admin session.', 'gold');
+      } catch (err) { notify(err.message || 'Unable to end auction.', 'error'); }
+    };
+
+    // Macro loupe tracking for mouse, pen, and touch pointers.
+    const loupeViewport = document.getElementById('saleroomViewport');
+    if (loupeViewport) {
+      const lens = document.getElementById('macroLoupeLens');
+      const sourceImage = document.getElementById('saleroomLotImg');
+      const moveLoupe = (event) => {
+        if (!lens || lens.classList.contains('hidden') || !sourceImage) return;
+        const rect = loupeViewport.getBoundingClientRect();
+        const x = Math.max(0, Math.min(rect.width, event.clientX - rect.left));
+        const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+        lens.style.left = `${x}px`;
+        lens.style.top = `${y}px`;
+        lens.style.backgroundImage = `url("${sourceImage.src}")`;
+        lens.style.backgroundSize = `${rect.width * 2.8}px ${rect.height * 2.8}px`;
+        lens.style.backgroundPosition = `${-(x * 2.8 - lens.offsetWidth / 2)}px ${-(y * 2.8 - lens.offsetHeight / 2)}px`;
+      };
+      loupeViewport.addEventListener('pointermove', moveLoupe, { passive: true });
+      loupeViewport.addEventListener('pointerdown', moveLoupe, { passive: true });
+    }
+
+    const sellerButton = document.getElementById('apply-seller-btn');
+    if (sellerButton) {
+      sellerButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.navigateTo('seller-register');
+      });
+    }
+  </script>
+
+  <script>
+    // PWA service worker: caches the app shell only; Firebase/account data remains network-only.
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch((error) => {
+          console.warn('PWA service worker registration failed:', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
